@@ -1,0 +1,17 @@
+@import 'tailwindcss/base.css';
+@import 'tailwindcss/components.css';
+@import 'tailwindcss/utilities.css';
+@import './variables/theme.pcss';
+@import './syntax/variables.pcss';
+@import './syntax/github-dark.pcss';
+@import './syntax/github-light.pcss';
+
+@layer utilities {
+	.highlight-white\/5 {
+		box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 5%);
+	}
+
+	.optimize-legibility {
+		text-rendering: optimizeLegibility;
+	}
+}

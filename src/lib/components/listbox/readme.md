@@ -1,0 +1,1 @@
+- Focus on closest possible match when typing.
