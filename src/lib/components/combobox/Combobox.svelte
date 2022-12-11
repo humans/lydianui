@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ComboboxOption, ComboboxState, ComboboxStore } from './types';
+	import type { ComboboxState, ComboboxStore } from './types';
 	import { derived } from 'svelte/store';
 	import { setContext } from './context';
 	import { useCombobox } from './store';
@@ -28,7 +28,6 @@
 	export let as = 'div';
 	export let value = null;
 	export let multiple = false;
-	export let sort: (a: ComboboxOption, b: ComboboxOption) => any = (a, b) => a.key;
 
 	const combobox = useCombobox({ value, multiple });
 
