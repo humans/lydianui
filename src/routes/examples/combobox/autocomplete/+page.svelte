@@ -1,5 +1,5 @@
 <script>
-	import { Combobox, ComboboxOption, ComboboxOptions, ComboboxInput } from '$lib';
+	import * as Combobox from '$lib/components/combobox';
 	import { people } from '$helpers/factories';
 
 	let selected;
@@ -8,18 +8,18 @@
 <div
 	class="[ px-8 flex pt-12 justify-center bg-gradient-to-tr bg-gradient-to-r from-sky-400 to-indigo-500 h-screen text-black space-x-8 ]"
 >
-	<Combobox bind:value={selected} class="[ w-full ]" let:state let:combobox>
+	<Combobox.Root bind:value={selected} class="[ w-full ]" let:state let:combobox>
 		<div class="[ relative ]">
-			<ComboboxInput
+			<Combobox.Input
 				placeholder="Select someone..."
 				class="[ border border-gray-100 bg-white rounded-lg px-4 py-2 w-full max-w-96 shadow ]"
 				display={(value) => value.name}
 				on:escape={combobox.close}
 			/>
 
-			<ComboboxOptions class="[ absolute mt-2 bg-white rounded-lg py-3 px-2 w-full space-y-1 ]">
+			<Combobox.Options class="[ absolute mt-2 bg-white rounded-lg py-3 px-2 w-full space-y-1 ]">
 				{#each people as person}
-					<ComboboxOption
+					<Combobox.Option
 						key={person.id}
 						value={person}
 						let:active
@@ -44,9 +44,9 @@
 								<span class="[ block text-gray-500 mt-0.5 ] ">Some role name here</span>
 							</div>
 						</div>
-					</ComboboxOption>
+					</Combobox.Option>
 				{/each}
-			</ComboboxOptions>
+			</Combobox.Options>
 		</div>
-	</Combobox>
+	</Combobox.Root>
 </div>

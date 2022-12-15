@@ -1,6 +1,5 @@
 <script>
-	import { Combobox, ComboboxOption, ComboboxOptions } from '$lib';
-	import ComboboxInput from '$lib/components/combobox/ComboboxInput.svelte';
+	import * as Combobox from '$lib';
 	import Stack from '$icons/solid/Stack.svelte';
 	import Search from '$icons/line/Search.svelte';
 
@@ -99,10 +98,10 @@
 <div
 	class="[ px-8 flex pt-12 justify-center bg-gradient-to-tr bg-gradient-to-r from-sky-400 to-indigo-500 h-screen text-black ]"
 >
-	<Combobox let:open on:close={handleClose} class="[ w-full ]">
+	<Combobox.Root let:open on:close={handleClose} class="[ w-full ]">
 		<div class="[ relative max-w-[600px] w-full mx-auto ]">
 			<div class="[ relative z-10 ]">
-				<ComboboxInput
+				<Combobox.Input
 					on:escape={handleEscape}
 					placeholder="Search for a command"
 					class="
@@ -117,12 +116,12 @@
 				/>
 			</div>
 
-			<ComboboxOptions>
+			<Combobox.Options>
 				<div
 					class="[ absolute bg-white rounded-lg rounded-t-none py-3 px-2 w-full space-y-1 shadow-2xl border-t border-gray-200 ]"
 				>
 					{#each commands as command (command.id)}
-						<ComboboxOption key={command.id} value={command} let:active>
+						<Combobox.Option key={command.id} value={command} let:active>
 							<div
 								class="[ leading-tight w-full rounded-md bg-opacity-25 py-2.5 px-3 flex items-center space-x-2 text-sm ]"
 								class:bg-gray-300={active}
@@ -136,10 +135,10 @@
 									<span class="[ block ]">{command.name}</span>
 								</div>
 							</div>
-						</ComboboxOption>
+						</Combobox.Option>
 					{/each}
 				</div>
-			</ComboboxOptions>
+			</Combobox.Options>
 		</div>
-	</Combobox>
+	</Combobox.Root>
 </div>

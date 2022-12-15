@@ -64,7 +64,7 @@
 		}
 	}
 
-	let value;
+	let value: any;
 
 	$: value = $combobox.value ? display($combobox.value) : '';
 

@@ -50,7 +50,7 @@ module.exports = {
 			},
 			letterSpacing: {},
 			fontFamily: {
-				code: ['Monaco', ...defaultTheme.fontFamily.mono]
+				code: ['Inconsolata', ...defaultTheme.fontFamily.mono]
 			}
 		}
 	},

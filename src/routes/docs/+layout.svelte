@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import '../../css/app.css';
 	import DocsLayout from '$helpers/layouts/DocsLayout.svelte';
 </script>

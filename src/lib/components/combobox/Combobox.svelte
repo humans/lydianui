@@ -25,9 +25,9 @@
 		'click-outside': CustomEvent;
 	}
 
-	export let as = 'div';
-	export let value = null;
-	export let multiple = false;
+	export let as: string = 'div';
+	export let value: any = null;
+	export let multiple: boolean = false;
 
 	const combobox = useCombobox({ value, multiple });
 

@@ -3,8 +3,6 @@
 @import 'tailwindcss/utilities.css';
 @import './variables/theme.pcss';
 @import './syntax/variables.pcss';
-@import './syntax/github-dark.pcss';
-@import './syntax/github-light.pcss';
 @import './utilities/prose.pcss';
 
 @layer utilities {

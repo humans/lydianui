@@ -1,14 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
-	import {
-		Dialog,
-		DialogPanel,
-		DialogOverlay,
-		Combobox,
-		ComboboxOptions,
-		ComboboxOption,
-		ComboboxInput
-	} from '$lib';
+	import { Dialog, DialogPanel, DialogOverlay } from '$lib';
+	import * as Combobox from '$lib/components/combobox';
 	import { tick } from 'svelte';
 	import Search from '$icons/line/Search.svelte';
 
@@ -72,15 +65,15 @@
 			on:click-outside={close}
 			class="[ shadow-xl shadow-white/20 max-w-3xl w-full self-start mt-24 ]"
 		>
-			<Combobox let:combobox>
+			<Combobox.Root value="Hello" let:combobox>
 				<div class="[ relative ]">
 					<div class="[ relative ]">
 						<Search
 							class="[ h-4 w-4 absolute top-1/2 -translate-y-1/2 ml-[1.375rem] ]"
-							strokeWidth="2.5"
+							strokeWidth={2.5}
 						/>
 
-						<ComboboxInput
+						<Combobox.Input
 							on:mount={combobox.focus}
 							placeholder="Go to..."
 							class="
@@ -90,12 +83,12 @@
 						/>
 					</div>
 
-					<ComboboxOptions
+					<Combobox.Options
 						class="[ absolute w-full bg-black py-3 px-[0.4375rem] rounded-b-xl border border-neutral-50 border-t-0 ]"
 					>
 						<div class="[ relative ]">
 							{#each commands as command}
-								<ComboboxOption key={command.id} value={command} let:active let:selected>
+								<Combobox.Option key={command.id} value={command} let:active let:selected>
 									<div
 										class:bg-blue-600={active}
 										class:font-bold={active}
@@ -107,12 +100,12 @@
 											{command.name}
 										</div>
 									</div>
-								</ComboboxOption>
+								</Combobox.Option>
 							{/each}
 						</div>
-					</ComboboxOptions>
+					</Combobox.Options>
 				</div>
-			</Combobox>
+			</Combobox.Root>
 		</DialogPanel>
 	</div>
 </Dialog>

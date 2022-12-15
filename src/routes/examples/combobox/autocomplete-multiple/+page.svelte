@@ -1,7 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import { Combobox, ComboboxOption, ComboboxOptions } from '$lib';
-	import ComboboxInput from '$lib/components/combobox/ComboboxInput.svelte';
+	import * as Combobox from '$lib/components/combobox';
 	import { fuzzy } from '$lib/helpers/collections';
 
 	const people = [
@@ -130,7 +129,7 @@
 
 		<button on:click={() => (selected = [])}>Reset values from the outside</button>
 
-		<Combobox bind:value={selected} multiple let:state let:combobox>
+		<Combobox.Root bind:value={selected} multiple let:state let:combobox>
 			<div class="[ relative ]">
 				<div
 					class="[ border border-gray-100 bg-white rounded-lg px-4 py-2 w-full shadow inline-flex flex-wrap -m-0.5 ]"
@@ -150,7 +149,7 @@
 						</div>
 					{/each}
 
-					<ComboboxInput
+					<Combobox.Input
 						placeholder="Select someone..."
 						class="[ outline-none min-w-12 w-full ]"
 						on:escape={combobox.close}
@@ -164,9 +163,9 @@
 						class="[ absolute mt-2 bg-white rounded-lg py-3 px-2 w-full ]"
 						transition:fly={{ y: 5, duration: 100 }}
 					>
-						<ComboboxOptions class="[ max-h-[300px] overflow-y-auto relative ]">
+						<Combobox.Options class="[ max-h-[300px] overflow-y-auto relative ]">
 							{#each filteredPeople as person (person.id)}
-								<ComboboxOption let:selected let:active key={person.id} value={person}>
+								<Combobox.Option let:selected let:active key={person.id} value={person}>
 									<div
 										class:bg-gray-400={active && !selected}
 										class:bg-green-400={!active && selected}
@@ -185,16 +184,16 @@
 											<span class="[ block text-gray-500 mt-0.5 ]">Some role name here</span>
 										</div>
 									</div>
-								</ComboboxOption>
+								</Combobox.Option>
 							{/each}
 
 							{#if filteredPeople.length === 0}
 								<div class="[ text-gray-600 text-sm text-center ]">No one found</div>
 							{/if}
-						</ComboboxOptions>
+						</Combobox.Options>
 					</div>
 				{/if}
 			</div>
-		</Combobox>
+		</Combobox.Root>
 	</div>
 </div>

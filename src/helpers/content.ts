@@ -4,9 +4,7 @@ interface PostData {
 }
 
 export async function get(category: string, slug: string) {
-	const { default: body, metadata } = await import(
-		`../content/${category}/${slug}/index.svelte.md`
-	);
+	const { default: body, metadata } = await import(`../content/docs/${category}/${slug}.svelte.md`);
 
 	const { title, byline } = metadata as PostData;
 

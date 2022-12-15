@@ -5,9 +5,9 @@
 	import { getContext } from './context';
 	import { reject } from '../../helpers/collections';
 
-	export let key;
-	export let value = null;
-	export let disabled = false;
+	export let key: any;
+	export let value: any = null;
+	export let disabled: boolean = false;
 
 	const { combobox, cursor } = getContext();
 
@@ -64,6 +64,7 @@
 	on:click|preventDefault={handleClick}
 	bind:this={option.$element}
 	aria-disabled={disabled ? 'true' : 'false'}
+	aria-selected={combobox.selected(value) ? 'true' : 'false'}
 >
 	<slot active={$active} selected={combobox.selected(value)} />
 </li>

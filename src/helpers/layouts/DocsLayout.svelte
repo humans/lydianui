@@ -1,4 +1,5 @@
 <script>
+	import navigation from './navigation.ts';
 </script>
 
 <div class="layout layout--docs [ min-h-full ]">
@@ -8,12 +9,14 @@
 				<strong>lydianui</strong>
 			</div>
 
-			<div class="[ text-sm hidden md:flex space-x-6 items-center justify-end lg:justify-between w-full ]">
+			<div
+				class="[ text-sm hidden md:flex space-x-6 items-center justify-end lg:justify-between w-full ]"
+			>
 				<div class="[ hidden lg:block ]">
 					<form action="">
 						<input
 							type="text"
-							class="[ bg-neutral-100 rounded-full text-sm py-1.5 px-4 ]"
+							class="[ bg-neutral-100 rounded-md text-sm py-2 px-4 ]"
 							placeholder="Search..."
 						/>
 					</form>
@@ -34,14 +37,31 @@
 			class="layout__sidebar [ hidden md:flex text-sm bg-neutral-50 min-h-screen w-full shrink-0 ]"
 		>
 			<div class="layout__navigation [ px-8 overflow-y-auto ]">
-				{#each Array(50) as _, index}
-					<div>Navigation {index}</div>
-				{/each}
+				<ul class="[ space-y-6 ]">
+					{#each navigation as category}
+						<li>
+							<strong class="[ font-bold ]">{category.text}</strong>
+
+							<ul class="[ mt-2 space-y-1.5 ]">
+								{#each category.items as item}
+									<li>
+										<a
+											href={item.link}
+											class="[ duration-75 transition-colors text-neutral-700 hover:text-neutral-900 block ]"
+										>
+											{item.text}
+										</a>
+									</li>
+								{/each}
+							</ul>
+						</li>
+					{/each}
+				</ul>
 			</div>
 		</aside>
 
 		<main class="layout__content [ w-full ]">
-			<div class="[ max-w-4xl w-full mx-auto ]">
+			<div class="[ max-w-3xl w-full mx-auto ]">
 				<div class="[ px-8 ]">
 					<slot />
 				</div>

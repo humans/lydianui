@@ -1,129 +1,135 @@
-.hljs {
-	background-color: var(--editor-background);
-	color: var(--editor-foreground);
-	display: block;
+pre[class*="language-"],
+code[class*="language-"] {
+    color: #bfbdb6;
+    font-size: 13px;
+    text-shadow: none;
+}
 
-	&-quote {
-		font-style: italic;
-	}
-	&-comment {
-		font-style: italic;
-	}
-	&-emphasis {
-		font-style: italic;
-	}
-	&-strong {
-		font-weight: bold;
-	}
-	&-regexp {
-		background-color: var(--white);
-	}
-	&-addition {
-		color: var(--token-addition);
-	}
-	&-deletion {
-		color: var(--token-deletion);
-	}
-	&-link {
-		color: var(--token-link);
-	}
-	&-emphasis {
-		color: var(--token-emphasis);
-	}
-	&-attribute {
-		color: var(--token-attribute);
-	}
-	&-strong {
-		color: var(--token-strong);
-	}
-	&-string {
-		color: var(--token-string);
-	}
-	&-quote {
-		color: var(--token-quote);
-	}
-	&-comment {
-		color: var(--token-comment);
-	}
-	&-section {
-		color: var(--token-section);
-	}
-	&-type {
-		color: var(--token-type);
-	}
-	&-template-variable {
-		color: var(--token-template-variable);
-	}
-	&-variable {
-		color: var(--token-variable);
-	}
-	&-bullet {
-		color: var(--token-bullet);
-	}
-	&-meta {
-		color: var(--token-meta);
-	}
-	&-code {
-		color: var(--token-code);
-	}
-	&-number {
-		color: var(--token-number);
-	}
-	&-literal {
-		color: var(--token-literal);
-	}
-	&-keyword {
-		color: var(--token-keyword);
-	}
-	&-built_in {
-		color: var(--token-built-in);
-	}
-	&-selector-tag {
-		color: var(--token-selector-tag);
-	}
-	&-symbol {
-		color: var(--token-symbol);
-	}
-	&-tag {
-		color: var(--token-tag);
-	}
-	&-name {
-		color: var(--token-name);
-	}
-	&-selector-id {
-		color: var(--token-selector-id);
-	}
-	&-selector-class {
-		color: var(--token-selector-class);
-	}
-	&-regexp {
-		color: var(--token-regex);
-	}
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"]::mozselection,
+code[class*="language-"]::mozselection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
 
-	&-function &-title {
-		color: var(--token-function-title);
-	}
-	&-function &-params {
-		color: var(--token-function-types);
-	}
-	&-function &-params &-variable {
-		color: var(--token-function-parameters);
-	}
-	&-title.function_.invoke__ {
-		color: var(--token-function-invoke);
-	}
+@media print {
+    pre[class*="language-"],
+    code[class*="language-"] {
+        text-shadow: none;
+    }
+}
 
-	&-class &-title {
-		color: var(--token-class-title);
-	}
-	&-title.class_ {
-		color: var(--token-class-title);
-	}
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    background: #0d1017;
+}
 
-	&.php &-title {
-		color: var(--gray-200);
-	}
-	&.php &-variable {
-		color: var(--gray-200);
-	}
+:not(pre) > code[class*="language-"] {
+    padding: .1em .3em;
+    border-radius: .3em;
+    color: #db4c69;
+    background: #f9f2f4;
+}
+
+/*********************************************************
+* Tokens
+*/
+.namespace {
+    opacity: .7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #acb6bf 8 c;
+}
+
+.token.punctuation {
+    color: #999999;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #39bae6;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #39bae6;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #a67f59;
+    background: #0b0e14;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #ff8f40;
+}
+
+.token.function {
+    color: #ffb454;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #59c2ff;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+    position: relative;
+}
+
+pre[class*="language-"] > code[class*="language-"] {
+    position: relative;
+    z-index: 1;
+}
+
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 1em;
+    background: #131721;
+    box-shadow: inset 5px 0 0 #409fff4d;
+    z-index: 0;
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre;
 }
