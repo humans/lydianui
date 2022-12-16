@@ -1,6 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import { Popover, PopoverButton, PopoverPanel } from '$lib';
+	import { Popover } from '$lib';
 	import Chat from '$helpers/icons/Chat.svelte';
 	import ChevronDown from '../../../../helpers/icons/ChevronDown.svelte';
 
@@ -35,15 +35,15 @@
 <div class="[ flex bg-gradient-to-br from-indigo-600 to-cyan-500 h-screen ]">
 	<header class="[ py-4 px-10 flex space-x-4 ]">
 		{#each Array(4) as _}
-			<Popover behavior="press">
-				<PopoverButton
+			<Popover.Root behavior="press">
+				<Popover.Button
 					class="[ text-base tracking-tight font-bold text-white py-4 px-4 flex items-center space-x-2 ]"
 				>
 					<span>Products</span>
 					<ChevronDown class="[ h-3.5 w-3.5 top-px relative text-neutral-700 ]" strokeWidth="2.5" />
-				</PopoverButton>
+				</Popover.Button>
 
-				<PopoverPanel class="[ w-full absolute w-[450px] ]">
+				<Popover.Panel class="[ w-full absolute w-[450px] ]">
 					<div
 						transition:fly={{
 							y: -5,
@@ -96,8 +96,8 @@
 							</div>
 						</div>
 					</div>
-				</PopoverPanel>
-			</Popover>
+				</Popover.Panel>
+			</Popover.Root>
 		{/each}
 	</header>
 </div>

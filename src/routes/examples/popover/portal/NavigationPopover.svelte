@@ -1,7 +1,7 @@
 <script>
 	import { computePosition, shift, offset, autoUpdate } from '@floating-ui/dom';
 	import { fly } from 'svelte/transition';
-	import { Popover, PopoverButton, PopoverPanel } from '$lib';
+	import { Popover } from '$lib';
 	import Chat from '$helpers/icons/Chat.svelte';
 	import { onMount } from 'svelte';
 	import { portal } from 'svelte-portal';
@@ -51,13 +51,13 @@
 	});
 </script>
 
-<Popover behavior="hover">
-	<PopoverButton class="[ text-base tracking-tight font-bold text-white py-4 px-4 ]">
+<Popover.Root behavior="hover">
+	<Popover.Button class="[ text-base tracking-tight font-bold text-white py-4 px-4 ]">
 		<span bind:this={reference}>Products</span>
-	</PopoverButton>
+	</Popover.Button>
 
 	<div bind:this={tooltip} class="[ w-[450px] absolute ]" use:portal={'#navigation-popovers'}>
-		<PopoverPanel>
+		<Popover.Panel>
 			<div
 				transition:fly={{
 					y: -5,
@@ -107,6 +107,6 @@
 					</div>
 				</div>
 			</div>
-		</PopoverPanel>
+		</Popover.Panel>
 	</div>
-</Popover>
+</Popover.Root>
