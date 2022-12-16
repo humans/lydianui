@@ -1,5 +1,5 @@
 <script>
-	import * as Combobox from '$lib';
+	import { Combobox } from '$lib';
 	import Stack from '$icons/solid/Stack.svelte';
 	import Search from '$icons/line/Search.svelte';
 

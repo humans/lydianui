@@ -1,8 +1,14 @@
-<script context="module">
+<script context="module" lang="ts">
 	export const DialogContextKey = Symbol();
 </script>
 
-<script>
+<script lang="ts">
+	interface $$Props {
+		as: string;
+		open: boolean;
+		[key: string]: any;
+	}
+
 	export let as = 'div';
 
 	export let open;

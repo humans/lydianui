@@ -1,6 +1,8 @@
 <script lang="ts">
+	import '../../../../css/app.css';
 	import DocPage from '$helpers/layouts/DocsPage.svelte';
 	import { afterNavigate } from '$app/navigation';
+	import DocsLayout from '$helpers/layouts/DocsLayout.svelte';
 
 	export let data;
 
@@ -11,4 +13,6 @@
 	});
 </script>
 
-<DocPage {post} />
+<DocsLayout examples={post.examples ?? []}>
+	<DocPage {post} />
+</DocsLayout>

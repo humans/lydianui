@@ -3,7 +3,7 @@
 	export let type = 'neutral';
 
 	const TypeStyle = {
-		neutral: 'callout--neutral [ bg-neutral-100 ]'
+		neutral: 'callout--neutral [ bg-neutral-50 ]'
 	};
 </script>
 

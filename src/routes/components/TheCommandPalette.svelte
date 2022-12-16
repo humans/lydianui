@@ -1,7 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { Dialog, DialogPanel, DialogOverlay } from '$lib';
-	import * as Combobox from '$lib/components/combobox';
+	import { Dialog, Combobox } from '$lib';
 	import { tick } from 'svelte';
 	import Search from '$icons/line/Search.svelte';
 
@@ -57,11 +56,11 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<Dialog bind:open={state.open}>
+<Dialog.Root bind:open={state.open}>
 	<div class="[ fixed inset-0 bg-slate-900/90 backdrop-blur ]" />
 
 	<div class="[ inset-0 fixed flex justify-center ]">
-		<DialogPanel
+		<Dialog.Panel
 			on:click-outside={close}
 			class="[ shadow-xl shadow-white/20 max-w-3xl w-full self-start mt-24 ]"
 		>
@@ -106,6 +105,6 @@
 					</Combobox.Options>
 				</div>
 			</Combobox.Root>
-		</DialogPanel>
+		</Dialog.Panel>
 	</div>
-</Dialog>
+</Dialog.Root>

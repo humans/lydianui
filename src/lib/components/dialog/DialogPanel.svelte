@@ -1,5 +1,14 @@
-<script>
+<script lang="ts">
 	import { clickOutside } from '../../actions/use-click-outside.js';
+
+	interface $$Props {
+		as: string;
+		[key: string]: any;
+	}
+
+	interface $$Events {
+		'click-outside': CustomEvent;
+	}
 
 	export let as = 'div';
 </script>

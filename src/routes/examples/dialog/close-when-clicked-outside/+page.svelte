@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { scale, fade } from 'svelte/transition';
-	import { Dialog, DialogPanel, DialogOverlay } from '$lib/components/dialog';
+	import * as Dialog from '$lib/components/dialog';
 
 	let open = false;
 
@@ -26,12 +26,12 @@
 		Open Dialog
 	</button>
 
-	<Dialog bind:open handleClose={() => (open = false)}>
+	<Dialog.Root bind:open handleClose={() => (open = false)}>
 		<div
 			class="[ fixed inset-0 flex items-center justify-center px-8 ]"
 			transition:scale={{ start: 0.92, duration: 250 }}
 		>
-			<DialogPanel
+			<Dialog.Panel
 				on:click-outside={() => (open = false)}
 				class="[ max-w-[300px] w-full bg-violet-200 text-black rounded-xl relative z-50 shadow-2xl max-w-2xl overflow-hidden ]"
 			>
@@ -60,7 +60,7 @@
 						See what they've been up to
 					</a>
 				</div>
-			</DialogPanel>
+			</Dialog.Panel>
 		</div>
-	</Dialog>
+	</Dialog.Root>
 </div>

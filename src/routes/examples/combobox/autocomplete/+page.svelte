@@ -1,8 +1,8 @@
-<script>
-	import * as Combobox from '$lib/components/combobox';
+<script lang="ts">
+	import { Combobox } from '$lib';
 	import { people } from '$helpers/factories';
 
-	let selected;
+	let selected: any = null;
 </script>
 
 <div

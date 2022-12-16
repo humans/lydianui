@@ -17,6 +17,7 @@
 		as: string;
 		value: any;
 		multiple: boolean;
+		[key: string]: any;
 	}
 
 	interface $$Events {

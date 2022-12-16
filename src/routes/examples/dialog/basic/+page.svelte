@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { scale, fade } from 'svelte/transition';
-	import { Dialog, DialogPanel, DialogOverlay } from '$lib/components/dialog';
+	import * as Dialog from '$lib/components/dialog';
 
 	let open = false;
 
@@ -26,16 +26,16 @@
 		Open Dialog
 	</button>
 
-	<Dialog bind:open handleClose={() => (open = false)}>
+	<Dialog.Root bind:open handleClose={() => (open = false)}>
 		<div transition:fade={{ duration: 100 }}>
-			<DialogOverlay class="[ fixed inset-0 bg-neutral-200/25 backdrop-blur ]" />
+			<Dialog.Overlay class="[ fixed inset-0 bg-neutral-200/25 backdrop-blur ]" />
 		</div>
 
 		<div
 			class="[ fixed inset-0 flex items-center justify-center px-8 ]"
 			transition:scale={{ start: 0.92, duration: 250 }}
 		>
-			<DialogPanel
+			<Dialog.Panel
 				class="[ w-[500px] border bg-neutral-50 rounded-xl px-8 py-6 relative z-50 shadow-2xl shadow-neutral-600/10 max-w-2xl ]"
 			>
 				<h2 class="[ text-base font-bold ]">Are you sure you want to delete this repository?</h2>
@@ -65,7 +65,7 @@
 						</button>
 					</form>
 				</footer>
-			</DialogPanel>
+			</Dialog.Panel>
 		</div>
-	</Dialog>
+	</Dialog.Root>
 </div>

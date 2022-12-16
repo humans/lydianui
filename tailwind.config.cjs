@@ -50,7 +50,7 @@ module.exports = {
 			},
 			letterSpacing: {},
 			fontFamily: {
-				code: ['Inconsolata', ...defaultTheme.fontFamily.mono]
+				code: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
 			}
 		}
 	},

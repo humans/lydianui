@@ -1,4 +1,5 @@
 .prose {
+	text-rendering: optimizeLegibility;
 	letter-spacing: -0.003em;
 	line-height: 1.575;
 
@@ -10,11 +11,11 @@
 	h3,
 	h4 {
 		font-weight: 700;
-		margin-bottom: 0.4em;
+		margin-bottom: 0.45em;
 		line-height: 1.2;
 		position: relative;
-		padding-left: 3rem;
-		transform: translateX(-3rem);
+		padding-left: 2rem;
+		transform: translateX(-2rem);
 	}
 
 	h2,
@@ -33,16 +34,16 @@
 			display: none;
 			position: absolute;
 			top: 2px;
-			transform: translateX(-150%);
+			transform: translateX(-200%);
 		}
 
-		> a:hover:before {
+		&:hover a:before {
 			display: block;
 		}
 	}
 
 	h2 {
-		margin-top: 2.1em;
+		margin-top: 3em;
 		font-size: 1.5em;
 		letter-spacing: -0.028em;
 	}
@@ -53,13 +54,15 @@
 		letter-spacing: -0.01em;
 	}
 
-	h3 code {
-		font-weight: 800;
-		letter-spacing: -0.022em;
+	h2 code,
+	h3 code,
+	h4 code {
+		letter-spacing: -0.04em;
+		display: inline-block;
 	}
 
 	a {
-		color: theme('colors.accent.base');
+		color: theme('colors.stroke');
 		text-decoration: underline;
 	}
 
@@ -67,11 +70,12 @@
 		color: theme('colors.accent.dark');
 	}
 
-	p,
-	pre,
-	ul,
-	ol {
+	p, pre, ul, ol {
 		margin-bottom: 1.3333em;
+	}
+
+	ul, ol {
+		margin-top: -0.2em;
 	}
 
 	p code {
@@ -84,6 +88,7 @@
 
 	pre {
 		margin-bottom: 2.2em;
+		font-smooth: never;
 	}
 
 	pre,
@@ -92,17 +97,21 @@
 	}
 
 	pre {
-		margin-left: -1.5rem;
-		margin-right: -1.5rem;
-		font-size: 0.9em;
-		line-height: 2.1;
+		font-size: 0.85em;
+		letter-spacing: -0.022em;
+		line-height: 2.4;
 		overflow-x: auto;
-	}
-
-	pre {
+		max-width: 100%;
 		box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 5%);
 		border-radius: theme('borderRadius.xl');
-		padding: 1.5rem 2rem;
+		padding: 1rem 1.5rem;
+
+		@screen md {
+			padding: 1.5rem 2rem;
+		}
+	}
+
+	pre code {
 		display: block;
 		min-width: -webkit-max-content;
 		min-width: -moz-max-content;
@@ -121,6 +130,10 @@
 	ol {
 		list-style-position: outside;
 		padding-left: 1.5rem;
+
+		> * {
+			margin: 0.5rem 0;
+		}
 	}
 
 	li {
@@ -135,5 +148,14 @@
 
 	table p {
 		margin-bottom: 0;
+	}
+
+	table th {
+		font-weight: 600;
+	}
+
+	table code {
+		letter-spacing: -0.022em;
+		font-weight: 600;
 	}
 }

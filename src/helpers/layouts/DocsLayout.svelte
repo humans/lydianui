@@ -1,28 +1,31 @@
 <script>
-	import navigation from './navigation.ts';
+	import DocsNavigation from '$helpers/layouts/DocsNavigation.svelte';
+	import DocsTableOfContents from '$helpers/layouts/DocsTableOfContents.svelte';
+
+	export let examples = [];
 </script>
 
 <div class="layout layout--docs [ min-h-full ]">
-	<header class="layout__header [ flex justify-center absolute top-0 left-0 w-full ]">
-		<div class="container [ w-full px-8 flex items-center justify-between ]">
-			<div class="layout__logo">
-				<strong>lydianui</strong>
+	<header
+		class="layout__header [ h-[5rem] flex fixed top-0 left-0 right-0 w-full bg-canvas/50 backdrop-blur z-10 ]"
+	>
+		<div class="[ max-w-[90rem] w-full mx-auto px-8 flex items-center ]">
+			<div class="[ md:w-64 flex-items-center shrink-0 ]">
+				<div class="layout__logo">
+					<strong>lydianui</strong>
+				</div>
 			</div>
 
-			<div
-				class="[ text-sm hidden md:flex space-x-6 items-center justify-end lg:justify-between w-full ]"
-			>
-				<div class="[ hidden lg:block ]">
-					<form action="">
-						<input
-							type="text"
-							class="[ bg-neutral-100 rounded-md text-sm py-2 px-4 ]"
-							placeholder="Search..."
-						/>
-					</form>
-				</div>
+			<div class="[ hidden lg:flex justify-between items-center w-full ]">
+				<form action="">
+					<input
+						type="text"
+						class="[ bg-neutral-100 rounded-md text-sm py-2 px-4 text-sm ]"
+						placeholder="Search..."
+					/>
+				</form>
 
-				<ul class="[ flex space-x-4 ]">
+				<ul class="[ flex space-x-4 text-neutral-700 text-sm ]">
 					<li><a href="">Docs</a></li>
 					<li><a href="">API</a></li>
 					<li><a href="">Plugins</a></li>
@@ -32,77 +35,40 @@
 		</div>
 	</header>
 
-	<div class="layout__body [ md:flex ]">
-		<aside
-			class="layout__sidebar [ hidden md:flex text-sm bg-neutral-50 min-h-screen w-full shrink-0 ]"
-		>
-			<div class="layout__navigation [ px-8 overflow-y-auto ]">
-				<ul class="[ space-y-6 ]">
-					{#each navigation as category}
-						<li>
-							<strong class="[ font-bold ]">{category.text}</strong>
-
-							<ul class="[ mt-2 space-y-1.5 ]">
-								{#each category.items as item}
-									<li>
-										<a
-											href={item.link}
-											class="[ duration-75 transition-colors text-neutral-700 hover:text-neutral-900 block ]"
-										>
-											{item.text}
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</li>
-					{/each}
-				</ul>
-			</div>
+	<div class="[ max-w-[90rem] mx-auto px-8 pt-[6rem] flex ]">
+		<aside class="layout__sidebar [ hidden lg:block w-64 pr-8 shrink-0 text-sm ]">
+			<DocsNavigation class="[ sticky top-[6rem] ]" />
 		</aside>
 
-		<main class="layout__content [ w-full ]">
-			<div class="[ max-w-3xl w-full mx-auto ]">
-				<div class="[ px-8 ]">
-					<slot />
-				</div>
+		<main class="layout__content [ w-full pb-24 ]">
+			<div class="[ max-w-[680px] w-full mx-auto ]">
+				<slot />
 			</div>
 		</main>
+
+		<aside class="layout__table-of-contents [ text-sm hidden xl:block w-64 pl-8 shrink-0 ]">
+			<div class="[ sticky top-[6rem] space-y-8 ]">
+				<DocsTableOfContents />
+
+				{#if examples.length > 0}
+					<nav>
+						<h3 class="[ font-bold ]">Examples</h3>
+
+						<ul class="[ leading-loose space-y-0.5 mt-2 ]">
+							{#each examples as example}
+								<li>
+									<a
+										class="[ transition-all text-neutral-500 hover:text-stroke ]"
+										href={example.link}
+									>
+										{example.text}
+									</a>
+								</li>
+							{/each}
+						</ul>
+					</nav>
+				{/if}
+			</div>
+		</aside>
 	</div>
 </div>
-
-<style lang="postcss">
-	:root {
-		--layout-header-height: 80px;
-		--layout-navigation-width: 250px;
-		--layout-max-width: 90rem;
-		--layout-padding: 4rem;
-	}
-
-	.layout__sidebar {
-		width: calc(
-			(100% - (var(--layout-max-width) - var(--layout-padding))) / 2 +
-				var(--layout-navigation-width) - (var(--layout-padding) / 2)
-		);
-		min-width: var(--layout-navigation-width);
-		padding-left: calc((100% - var(--layout-max-width)) / 2);
-	}
-
-	.layout__navigation {
-		min-width: var(--layout-navigation-width);
-		max-height: calc(100vh - var(--layout-header-height));
-	}
-
-	.layout__logo {
-		min-width: calc(var(--layout-navigation-width));
-	}
-
-	.container {
-		max-width: calc(var(--layout-max-width));
-		height: var(--layout-header-height);
-	}
-
-	.layout__sidebar,
-	.layout__content {
-		padding-top: calc(var(--layout-header-height));
-	}
-</style>

@@ -1,6 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import * as Combobox from '$lib/components/combobox';
+	import { Combobox } from '$lib';
 	import { fuzzy } from '$lib/helpers/collections';
 
 	const people = [
