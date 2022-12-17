@@ -2,16 +2,16 @@
 	import { PopoverContextKey } from './Popover.svelte';
 	import { getContext } from 'svelte';
 
-	const popover = getContext(PopoverContextKey);
+	const { popover } = getContext(PopoverContextKey);
 </script>
 
 <button
 	type="button"
 	{...$$restProps}
-	bind:this={$popover.trigger}
-	on:mouseenter={$popover.behavior.handleTriggerMouseEnter}
-	on:click|preventDefault={$popover.behavior.handleToggle}
-	on:focus={$popover.behavior.handleTriggerFocus}
+	bind:this={$popover.$trigger}
+	on:mouseenter={popover.handleMouseEnter}
+	on:click|preventDefault={popover.handleClick}
+	on:focus={popover.handleFocus}
 >
 	<slot />
 </button>

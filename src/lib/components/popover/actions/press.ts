@@ -1,6 +1,6 @@
-import type { BehaviorFactory } from '../types';
+import type { PopoverBehaviorFactory } from '../types';
 
-export const press: BehaviorFactory = (popover) => ({
+export const press: PopoverBehaviorFactory = (popover) => ({
 	handleTriggerMouseEnter() {},
 
 	handleMouseLeave() {},
