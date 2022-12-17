@@ -2,13 +2,14 @@
 	export const PopoverContextKey = Symbol();
 </script>
 
-<script>
+<script lang="ts">
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { clickOutside } from '../../actions/use-click-outside.js';
-	import { resolveActions } from './actions/index.js';
+	import { resolveActions } from './actions/index.ts';
+	import { BehaviorType } from './types';
 
-	export let behavior = 'hover';
+	export let behavior: BehaviorType = BehaviorType.Hover;
 
 	function handleKeydown(event) {
 		if (!$popover.isOpen) {

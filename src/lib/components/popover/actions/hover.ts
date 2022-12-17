@@ -1,4 +1,6 @@
-export default (popover) => ({
+import type { BehaviorFactory } from '../types';
+
+export const hover: BehaviorFactory = (popover) => ({
 	handleTriggerMouseEnter() {
 		if (popover.isOpen) {
 			return;
@@ -11,7 +13,6 @@ export default (popover) => ({
 		if (!popover.isOpen) {
 			return;
 		}
-
 		popover.close();
 	},
 
@@ -24,7 +25,11 @@ export default (popover) => ({
 			return;
 		}
 
-		if (popover.element.contains(event.relatedTarget)) {
+		if (!event.relatedTarget) {
+			return;
+		}
+
+		if (popover.element?.contains(event.relatedTarget)) {
 			return;
 		}
 

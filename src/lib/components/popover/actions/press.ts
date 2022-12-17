@@ -1,4 +1,6 @@
-export default (popover) => ({
+import type { BehaviorFactory } from '../types';
+
+export const press: BehaviorFactory = (popover) => ({
 	handleTriggerMouseEnter() {},
 
 	handleMouseLeave() {},
