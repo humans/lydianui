@@ -1,3 +1,7 @@
+:root {
+    --token-punctuation: #ffffff50;
+}
+
 pre[class*="language-"],
 code[class*="language-"] {
     color: #bfbdb6;
@@ -44,11 +48,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #acb6bf 8 c;
+    color: #acb6bf;
 }
 
 .token.punctuation {
-    color: #999999;
+    color: var(--token-punctuation);
 }
 
 .token.property,
@@ -106,6 +110,28 @@ pre[class*="language-"] {
 
 .token.entity {
     cursor: help;
+}
+
+.token.tag {
+    .token.attr-name:not(:has(.namespace)) {
+        color: #95e6cb;
+        //color: #d2a6ff;
+    }
+
+    .token.attr-name:has(.namespace) .namespace {
+        color: #ff8f40;
+        //color: #aad94c;
+        opacity: 1;
+    }
+}
+
+.token.language-javascript {
+    //color: #95e6cb;
+    color: #bfbdb6;
+
+    .token.punctuation {
+        //color: var(--token-punctuation);
+    }
 }
 
 /*********************************************************
