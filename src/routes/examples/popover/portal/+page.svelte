@@ -1,4 +1,5 @@
 <script>
+	import { Popover } from '$lib';
 	import NavigationPopover from './NavigationPopover.svelte';
 </script>
 

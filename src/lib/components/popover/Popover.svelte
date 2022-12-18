@@ -22,10 +22,6 @@
 		}
 
 		popover.close();
-
-		if ($popover.$trigger) {
-			$popover.$trigger?.focus({ preventScroll: true });
-		}
 	}
 
 	setContext(PopoverContextKey, {
@@ -43,5 +39,5 @@
 	on:focusout={popover.handleFocusOut}
 	on:mouseleave={popover.handleMouseLeave}
 >
-	<slot />
+	<slot state={$popover} />
 </div>

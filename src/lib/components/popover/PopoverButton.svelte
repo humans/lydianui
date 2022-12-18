@@ -3,6 +3,30 @@
 	import { getContext } from 'svelte';
 
 	const { popover } = getContext(PopoverContextKey);
+
+	function handlePrevious(event) {
+		popover.close();
+	}
+
+	function handleNext(event) {
+		if (!$popover.open) {
+			return;
+		}
+
+		$popover.focusable.$first.focus({ preventScroll: true });
+
+		event.preventDefault();
+	}
+
+	function handleKeydown(event) {
+		if (event.shiftKey && event.key === 'Tab') {
+			return handlePrevious(event);
+		}
+
+		if (event.key === 'Tab') {
+			return handleNext(event);
+		}
+	}
 </script>
 
 <button
@@ -12,6 +36,7 @@
 	on:mouseenter={popover.handleMouseEnter}
 	on:click|preventDefault={popover.handleClick}
 	on:focus={popover.handleFocus}
+	on:keydown={handleKeydown}
 >
 	<slot />
 </button>

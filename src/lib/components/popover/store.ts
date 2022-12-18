@@ -1,3 +1,4 @@
+import { PopoverContextKey } from './Popover.svelte';
 import { defineStore } from '$lib/store';
 import type { PopoverActions, PopoverBehavior, PopoverState } from './types';
 import { BehaviorType } from './types';
@@ -9,14 +10,17 @@ type PopoverOptions = {
 export const usePopover = (options: PopoverOptions) =>
 	defineStore<PopoverState, PopoverActions & PopoverBehavior>({
 		state: {
+			key: PopoverContextKey,
 			open: false,
 
 			$root: null,
+			$panel: null,
 			$trigger: null,
 
-			// Remove
-			isOpen: false,
-			element: null,
+			focusable: {
+				$first: null,
+				$last: null
+			},
 
 			...options
 		},
@@ -70,7 +74,7 @@ export const usePopover = (options: PopoverOptions) =>
 				this.close();
 			},
 
-			handleFocusOut({ open, behavior, $root }, event) {
+			handleFocusOut({ $panel, open, behavior, $root }, event) {
 				if (behavior === BehaviorType.Press) {
 					return;
 				}
@@ -87,6 +91,10 @@ export const usePopover = (options: PopoverOptions) =>
 					return;
 				}
 
+				if ($panel?.contains(event.relatedTarget)) {
+					return;
+				}
+
 				this.close();
 			},
 
@@ -95,7 +103,7 @@ export const usePopover = (options: PopoverOptions) =>
 					return;
 				}
 
-				this.open();
+				this.toggle();
 			}
 		}
 	});

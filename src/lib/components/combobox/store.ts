@@ -6,6 +6,8 @@ export const useCombobox = (config: ComboboxConfig) =>
 		state: {
 			open: false,
 			options: [],
+
+			$group: null,
 			$root: null,
 			$input: null,
 			$options: null,

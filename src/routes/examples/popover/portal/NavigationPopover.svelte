@@ -51,10 +51,16 @@
 	});
 </script>
 
-<Popover.Root behavior="hover">
-	<Popover.Button class="[ text-base tracking-tight font-bold text-white py-4 px-4 ]">
-		<span bind:this={reference}>Products</span>
-	</Popover.Button>
+<Popover.Root behavior="hover" let:state>
+	<span
+		class="
+				[ block text-base tracking-tight font-bold text-white py-3 px-4 focus-within:bg-white rounded-xl ]
+				[ focus-within:bg-white/25 ]
+		"
+		bind:this={reference}
+	>
+		<Popover.Button class="[ focus:outline-none ]">Products</Popover.Button>
+	</span>
 
 	<div bind:this={tooltip} class="[ w-[450px] absolute ]" use:portal={'#navigation-popovers'}>
 		<Popover.Panel>

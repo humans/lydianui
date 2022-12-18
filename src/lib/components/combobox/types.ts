@@ -16,6 +16,7 @@ export type ComboboxConfig = {
 export type ComboboxState = ComboboxConfig & {
 	open: boolean;
 	options: ComboboxOption[];
+	$group: HTMLElement | null;
 	$root: HTMLElement | null;
 	$input: HTMLElement | null;
 	$options: HTMLElement | null;
