@@ -1,12 +1,8 @@
-<script context="module">
-	export const ListboxContextKey = Symbol();
-</script>
-
 <script lang="ts">
-	import { setContext } from 'svelte';
 	import { derived } from 'svelte/store';
-	import { clickOutside } from '../../actions/use-click-outside.js';
 	import { useListbox } from './store';
+	import { setContext } from './context';
+	import { clickOutside } from '../../actions/use-click-outside.js';
 	import { useCursor } from '../../cursor';
 
 	export let multiple = false;
@@ -16,6 +12,8 @@
 		multiple,
 		value
 	});
+
+	$: $listbox.value = value;
 
 	listbox.subscribe((listbox) => {
 		if (listbox.value !== value) {
@@ -38,7 +36,7 @@
 		listbox.close();
 	}
 
-	setContext(ListboxContextKey, {
+	setContext({
 		cursor,
 		listbox
 	});

@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
 	import { derived } from 'svelte/store';
-	import { ListboxContextKey } from './Listbox.svelte';
+	import { getContext } from './context';
 	import { debounce } from '../../helpers/debounce';
 	import { scrollContainerTo } from '../../helpers/navigation';
 	import { isAlphanumeric } from '../../helpers/keyboard';
 
-	const { cursor, listbox, state, actions } = getContext(ListboxContextKey);
+	const { cursor, listbox } = getContext();
 
 	const availableOptions = derived(listbox, (listbox) => {
 		return listbox.options.filter((option) => !option.disabled);

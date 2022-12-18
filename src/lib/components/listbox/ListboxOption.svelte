@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { onMount, onDestroy, getContext } from 'svelte';
-	import { ListboxContextKey } from './Listbox.svelte';
-	import { reject } from '../../helpers/collections';
+	import { onMount, onDestroy } from 'svelte';
 	import { derived } from 'svelte/store';
+	import { getContext } from './context';
+	import { reject } from '../../helpers/collections';
 
 	export let value;
 	export let disabled = false;
 	export let key;
 
-	let { listbox, cursor } = getContext(ListboxContextKey);
+	let { listbox, cursor } = getContext();
 
 	const option = {
 		key,

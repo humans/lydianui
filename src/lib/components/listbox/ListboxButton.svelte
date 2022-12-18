@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import { ListboxContextKey } from './Listbox.svelte';
+	import { getContext } from './context';
 
-	const { listbox } = getContext(ListboxContextKey);
+	const { listbox } = getContext();
 </script>
 
 <button
