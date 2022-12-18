@@ -7,7 +7,6 @@ export type PopoverState = {
 	readonly key: unique symbol;
 	behavior: BehaviorType;
 	open: boolean;
-	group?: PopoverGroupState;
 
 	$panel: HTMLElement | null;
 	$trigger: HTMLElement | null;
@@ -25,10 +24,6 @@ export type PopoverBehavior = {
 export type PopoverActions = {
 	open: () => void;
 	close: () => void;
-};
-
-export type PopoverGroupState = {
-	popovers: Array<PopoverState>;
 };
 
 export type PopoverBehaviorFactory = (store: PopoverState & PopoverActions) => PopoverBehavior;
