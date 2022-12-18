@@ -2,14 +2,14 @@
 	import { getContext } from 'svelte';
 	import { ListboxContextKey } from './Listbox.svelte';
 
-	const { state } = getContext(ListboxContextKey);
+	const { listbox } = getContext(ListboxContextKey);
 </script>
 
 <button
 	type="button"
 	{...$$restProps}
-	on:click|preventDefault={$state.open}
-	bind:this={$state.trigger}
+	on:click|preventDefault={listbox.toggle}
+	bind:this={$listbox.$trigger}
 >
 	<slot />
 </button>

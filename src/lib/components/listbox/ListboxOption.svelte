@@ -1,26 +1,32 @@
 <script>
 	import { onMount, onDestroy, getContext } from 'svelte';
 	import { ListboxContextKey } from './Listbox.svelte';
+	import { reject } from '../../helpers/collections';
+	import { derived } from 'svelte/store';
 
 	export let value;
 	export let disabled = false;
 	export let key;
 
-	let { state, actions } = getContext(ListboxContextKey);
+	let { listbox, cursor } = getContext(ListboxContextKey);
 
 	const option = {
 		key,
 		value,
 		disabled,
-		element: null
+		$element: null
 	};
 
+	const active = derived(cursor, ({ item }) => {
+		return item?.key === key;
+	});
+
 	onMount(() => {
-		$state.options = [...$state.options, option];
+		$listbox.options = [...$listbox.options, option];
 	});
 
 	onDestroy(() => {
-		$state.options = $state.options.filter((option) => option.key !== key);
+		$listbox.options = reject($listbox.options, option, 'key', key);
 	});
 
 	function handleClick() {
@@ -28,7 +34,7 @@
 			return;
 		}
 
-		actions.select(value);
+		listbox.select(value);
 	}
 
 	function handleMouseover() {
@@ -36,10 +42,7 @@
 			return;
 		}
 
-		$state.active = option;
-		$state.cursor = $state.options
-			.filter((option) => !option.disabled)
-			.findIndex((option) => option === option);
+		cursor.select(option);
 	}
 </script>
 
@@ -47,7 +50,7 @@
 	role="option"
 	on:click|preventDefault={handleClick}
 	on:mouseover={handleMouseover}
-	bind:this={option.element}
+	bind:this={option.$element}
 >
-	<slot active={$state.active?.key === key} selected={actions.isSelected(value)} />
+	<slot active={$active} selected={listbox.selected(value)} />
 </li>
