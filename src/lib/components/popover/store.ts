@@ -28,14 +28,10 @@ export const usePopover = (options: PopoverOptions) =>
 		actions: {
 			open() {
 				this.$change({ open: true });
-
-				// Dispatch Event Here
 			},
 
 			close() {
 				this.$change({ open: false });
-
-				// Dispatch Event Here
 			},
 
 			toggle({ open }) {

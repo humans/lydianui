@@ -8,6 +8,11 @@ export type PopoverState = {
 	behavior: BehaviorType;
 	open: boolean;
 
+	focusable: {
+		$first: HTMLElement | null;
+		$last: HTMLElement | null;
+	};
+
 	$panel: HTMLElement | null;
 	$trigger: HTMLElement | null;
 	$root: HTMLElement | null;
@@ -24,6 +29,5 @@ export type PopoverBehavior = {
 export type PopoverActions = {
 	open: () => void;
 	close: () => void;
+	toggle: () => void;
 };
-
-export type PopoverBehaviorFactory = (store: PopoverState & PopoverActions) => PopoverBehavior;
