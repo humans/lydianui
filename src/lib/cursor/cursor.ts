@@ -1,6 +1,6 @@
 import { defineStore } from '$lib/store';
-import type { Readable } from 'svelte/store';
 import { get } from 'svelte/store';
+import type { Readable } from 'svelte/store';
 import type { CursorState, CursorActions } from './types';
 
 type TraversableItem = {

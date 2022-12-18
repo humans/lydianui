@@ -1,5 +1,5 @@
-import type { CursorStore } from '$lib/cursor';
-import type { Store } from '$lib/store';
+import type { CursorStore } from '../../cursor/types';
+import type { Store } from '../../store/types';
 
 export type ListboxConfig = {
 	multiple: boolean;

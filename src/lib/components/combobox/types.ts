@@ -1,4 +1,4 @@
-import type { Store } from '../../store';
+import type { Store } from '../../store/types';
 import type { CursorStore } from '../../cursor';
 
 export type ComboboxOption = {
