@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount, onDestroy, getContext } from 'svelte';
 	import { ListboxContextKey } from './Listbox.svelte';
 	import { reject } from '../../helpers/collections';
@@ -26,7 +26,7 @@
 	});
 
 	onDestroy(() => {
-		$listbox.options = reject($listbox.options, option, 'key', key);
+		$listbox.options = reject($listbox.options, 'key', key);
 	});
 
 	function handleClick() {
