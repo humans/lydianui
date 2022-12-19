@@ -1,12 +1,8 @@
 import type { ListboxContext } from '$lib/components/listbox/types';
+import { useContext } from '$lib/helpers/use-context';
+
 export const ListboxContextKey = Symbol();
-import { getContext as SvelteGetContext, setContext as SvelteSetContext } from 'svelte';
 
-type ListboxGetContext = () => ListboxContext;
-type ListboxSetContext = (attributes: ListboxContext) => void;
+const { getContext, setContext } = useContext<ListboxContext>(ListboxContextKey);
 
-export const getContext: ListboxGetContext = () =>
-	SvelteGetContext<ListboxContext>(ListboxContextKey);
-
-export const setContext: ListboxSetContext = (attributes) =>
-	SvelteSetContext<ListboxContext>(ListboxContextKey, attributes);
+export { getContext, setContext };

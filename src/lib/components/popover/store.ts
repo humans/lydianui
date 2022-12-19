@@ -1,4 +1,4 @@
-import { PopoverContextKey } from './Popover.svelte';
+import { PopoverContextKey } from './context';
 import { defineStore } from '$lib/store';
 import type { PopoverActions, PopoverBehavior, PopoverState } from './types';
 import { BehaviorType } from './types';

@@ -1,9 +1,8 @@
 <script>
-	import { getContext } from 'svelte';
-	import { PopoverContextKey } from './Popover.svelte';
 	import { queryFocusableElements } from '$lib/helpers/focus';
+	import { getContext } from './context';
 
-	const { popover } = getContext(PopoverContextKey);
+	const { popover } = getContext();
 
 	$: {
 		if ($popover.$panel) {

@@ -1,3 +1,5 @@
+import type { Writable } from 'svelte/store';
+
 export enum BehaviorType {
 	Press = 'press',
 	Hover = 'hover'
@@ -31,3 +33,5 @@ export type PopoverActions = {
 	close: () => void;
 	toggle: () => void;
 };
+
+export type PopoverStore = Writable<PopoverState> & PopoverActions;

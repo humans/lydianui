@@ -1,12 +1,8 @@
-<script context="module">
-	export const PopoverContextKey = Symbol();
-</script>
-
 <script lang="ts">
-	import { setContext } from 'svelte';
-	import { BehaviorType } from './types';
-	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { usePopover } from '$lib/components/popover/store';
+	import { clickOutside } from '$lib/actions/use-click-outside';
+	import { BehaviorType } from './types';
+	import { setContext } from './context';
 
 	export let behavior: BehaviorType = BehaviorType.Hover;
 
@@ -24,7 +20,7 @@
 		popover.close();
 	}
 
-	setContext(PopoverContextKey, {
+	setContext({
 		popover
 	});
 </script>

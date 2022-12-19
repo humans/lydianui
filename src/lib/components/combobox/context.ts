@@ -1,9 +1,8 @@
-import { setContext as SvelteSetContext, getContext as SvelteGetContext } from 'svelte';
 import type { ComboboxContext } from './types';
+import { useContext } from '$lib/helpers/use-context';
 
-const ComboboxContextKey: unique symbol = Symbol();
+export const ComboboxContextKey: unique symbol = Symbol();
 
-export const setContext = (context: ComboboxContext) =>
-	SvelteSetContext<ComboboxContext>(ComboboxContextKey, context);
+const { setContext, getContext } = useContext<ComboboxContext>(ComboboxContextKey);
 
-export const getContext = () => SvelteGetContext<ComboboxContext>(ComboboxContextKey);
+export { setContext, getContext };

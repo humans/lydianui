@@ -1,8 +1,7 @@
 <script>
-	import { getContext } from 'svelte';
-	import { PopoverContextKey } from './Popover.svelte';
+	import { getContext } from './context';
 
-	const { popover } = getContext(PopoverContextKey);
+	const { popover } = getContext();
 </script>
 
 <span {...$$restProps} on:mouseenter={popover.handleMouseEnter}>
