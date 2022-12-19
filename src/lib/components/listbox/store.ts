@@ -1,4 +1,4 @@
-import { defineStore } from '../../store';
+import { defineStore } from '$lib/store';
 
 import type { ListboxConfig, ListboxState, ListboxActions } from '$lib/components/listbox/types';
 

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { derived } from 'svelte/store';
+	import { useCursor } from '$lib/cursor';
+	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { useListbox } from './store';
 	import { setContext } from './context';
-	import { clickOutside } from '../../actions/use-click-outside.js';
-	import { useCursor } from '../../cursor';
 
 	export let multiple = false;
 	export let value;

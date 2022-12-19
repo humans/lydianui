@@ -2,8 +2,8 @@
 	import type { ComboboxOption } from './types';
 	import { onDestroy, onMount } from 'svelte';
 	import { derived } from 'svelte/store';
+	import { reject } from '$lib/helpers/collections';
 	import { getContext } from './context';
-	import { reject } from '../../helpers/collections';
 
 	export let key: any;
 	export let value: any = null;

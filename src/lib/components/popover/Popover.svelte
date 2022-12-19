@@ -4,8 +4,8 @@
 
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import { clickOutside } from '../../actions/use-click-outside.js';
 	import { BehaviorType } from './types';
+	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { usePopover } from '$lib/components/popover/store';
 
 	export let behavior: BehaviorType = BehaviorType.Hover;

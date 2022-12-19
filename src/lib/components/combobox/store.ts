@@ -1,5 +1,5 @@
 import type { ComboboxState, ComboboxConfig, ComboboxActions } from './types';
-import { defineStore } from '../../store';
+import { defineStore } from '$lib/store';
 
 export const useCombobox = (config: ComboboxConfig) =>
 	defineStore<ComboboxState, ComboboxActions>({

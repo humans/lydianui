@@ -3,8 +3,8 @@
 	import { derived } from 'svelte/store';
 	import { setContext } from './context';
 	import { useCombobox } from './store';
-	import { useCursor } from '../../cursor';
-	import { clickOutside } from '../../actions/use-click-outside.js';
+	import { useCursor } from '$lib/cursor';
+	import { clickOutside } from '$lib/actions/use-click-outside';
 
 	interface $$Slots {
 		default: {

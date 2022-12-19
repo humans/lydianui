@@ -1,7 +1,7 @@
 <script>
 	import { getContext } from 'svelte';
 	import { PopoverContextKey } from './Popover.svelte';
-	import { queryFocusableElements } from '../../helpers/focus';
+	import { queryFocusableElements } from '$lib/helpers/focus';
 
 	const { popover } = getContext(PopoverContextKey);
 

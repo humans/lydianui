@@ -1,5 +1,5 @@
-import type { Store } from '../../store/types';
-import type { CursorStore } from '../../cursor';
+import type { Store } from '$lib/store/types';
+import type { CursorStore } from '$lib/cursor/types';
 
 export type ComboboxOption = {
 	key: any;

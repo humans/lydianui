@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { getContext } from './context';
-	import { scrollContainerTo } from '../../helpers/navigation';
+	import { scrollContainerTo } from '$lib/helpers/navigation';
 
 	interface $$Events {
 		escape: CustomEvent;

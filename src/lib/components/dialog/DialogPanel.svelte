@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { clickOutside } from '../../actions/use-click-outside.js';
+	import { clickOutside } from '$lib/actions/use-click-outside';
 
 	interface $$Props {
 		as: string;

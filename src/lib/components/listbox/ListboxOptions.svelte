@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { derived } from 'svelte/store';
+	import { debounce } from '$lib/helpers/debounce';
+	import { scrollContainerTo } from '$lib/helpers/navigation';
+	import { isAlphanumeric } from '$lib/helpers/keyboard';
 	import { getContext } from './context';
-	import { debounce } from '../../helpers/debounce';
-	import { scrollContainerTo } from '../../helpers/navigation';
-	import { isAlphanumeric } from '../../helpers/keyboard';
 
 	const { cursor, listbox } = getContext();
 

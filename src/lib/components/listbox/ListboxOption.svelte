@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { derived } from 'svelte/store';
 	import { getContext } from './context';
-	import { reject } from '../../helpers/collections';
+	import { reject } from '$lib/helpers/collections';
 
 	export let value;
 	export let disabled = false;
