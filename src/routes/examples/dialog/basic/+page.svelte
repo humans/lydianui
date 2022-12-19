@@ -16,12 +16,16 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Basic Dialog</title>
+</svelte:head>
+
 <div
 	class="[ flex items-center justify-center bg-gradient-to-tr bg-gradient-to-r from-sky-400 to-indigo-500 h-screen ]"
 >
 	<button
 		on:click|preventDefault={() => (open = !open)}
-		class="[ bg-black/30 text-white text-sm rounded-lg px-4 py-2 font-medium ]"
+		class="[ bg-black text-white text-sm rounded-lg px-4 py-2 font-medium ]"
 	>
 		Open Dialog
 	</button>
@@ -38,13 +42,17 @@
 			<Dialog.Panel
 				class="[ w-[500px] border bg-neutral-50 rounded-xl px-8 py-6 relative z-50 shadow-2xl shadow-neutral-600/10 max-w-2xl ]"
 			>
-				<h2 class="[ text-base font-bold ]">Are you sure you want to delete this repository?</h2>
+				<Dialog.Title as="h1" class="[ text-base font-bold ]">
+					Are you sure you want to delete this repository?
+				</Dialog.Title>
 
 				<div class="[ mt-1 text-sm leading-relaxed text-neutral-700 ]">
-					<p>
+					<Dialog.Description>
 						Deleting this repository will remove all access and backups to this project. This is
 						irreversible.
-					</p>
+					</Dialog.Description>
+
+					<Dialog.Description>This is another description for the thing.</Dialog.Description>
 				</div>
 
 				<footer class="[ flex justify-end space-x-4 mt-8 ]">
