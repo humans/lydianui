@@ -5,7 +5,7 @@
 	import { isAlphanumeric } from '$lib/helpers/keyboard';
 	import { getContext } from './context';
 
-	const { cursor, listbox } = getContext();
+	const { cursor, listbox, a11y } = getContext();
 
 	const availableOptions = derived(listbox, (listbox) => {
 		return listbox.options.filter((option) => !option.disabled);
@@ -82,7 +82,15 @@
 <svelte:window on:keydown={handleKeydown} />
 
 {#if $listbox.open}
-	<ul role="listbox" {...$$restProps} bind:this={$listbox.$options}>
+	<ul
+		tabindex="0"
+		{...$$restProps}
+		bind:this={$listbox.$options}
+		id={a11y.first('options')}
+		role="listbox"
+		aria-orientation="vertical"
+		aria-labelledby={a11y.first('button')}
+	>
 		<slot />
 	</ul>
 {/if}

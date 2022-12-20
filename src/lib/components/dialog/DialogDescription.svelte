@@ -8,7 +8,7 @@
 
 	const { aria } = getContext();
 
-	const id = `dialog-description--${createUniqueId()}`;
+	const id = createUniqueId('dialog-description');
 
 	onMount(() => {
 		$aria.describedby = [...$aria.describedby, id];
