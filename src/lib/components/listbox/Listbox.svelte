@@ -54,6 +54,7 @@
 	on:click-outside={handleClickOutside}
 	on:close
 	on:open
+	on:input
 	bind:this={$listbox.$root}
 	id={handles.firstOrNew('root')}
 >

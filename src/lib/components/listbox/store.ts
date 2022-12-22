@@ -41,12 +41,14 @@ export const useListbox = (config: ListboxConfig) =>
 				this.close();
 			},
 
-			select({ multiple }, value) {
+			select({ multiple, $root }, value) {
 				if (multiple) {
 					this.$selectMany(value);
 				} else {
 					this.$selectOne(value);
 				}
+
+				$root?.dispatchEvent(new CustomEvent('input', { value }));
 			},
 
 			open({ $root, $options }) {
