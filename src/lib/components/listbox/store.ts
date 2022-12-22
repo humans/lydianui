@@ -48,7 +48,11 @@ export const useListbox = (config: ListboxConfig) =>
 					this.$selectOne(value);
 				}
 
-				$root?.dispatchEvent(new CustomEvent('input', { value }));
+				$root?.dispatchEvent(
+					new CustomEvent('input', {
+						detail: { value }
+					})
+				);
 			},
 
 			open({ $root, $options }) {
