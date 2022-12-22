@@ -3,7 +3,7 @@
 	import { derived } from 'svelte/store';
 	import { setContext } from './context';
 	import { useCombobox } from './store';
-	import { useCursor } from '$lib/cursor';
+	import { defineCursor } from '$lib/cursor';
 	import { clickOutside } from '$lib/actions/use-click-outside';
 
 	interface $$Slots {
@@ -32,7 +32,7 @@
 
 	const combobox = useCombobox({ value, multiple });
 
-	const cursor = useCursor(
+	const cursor = defineCursor(
 		derived(combobox, (combobox) => {
 			return combobox.options.filter((option) => !option.disabled);
 		}),

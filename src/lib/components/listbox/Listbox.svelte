@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { derived } from 'svelte/store';
-	import { useCursor } from '$lib/cursor';
+	import { defineCursor } from '$lib/cursor';
 	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { useListbox } from './store';
 	import { setContext } from './context';
@@ -22,7 +22,7 @@
 		}
 	});
 
-	const cursor = useCursor(
+	const cursor = defineCursor(
 		derived(listbox, (listbox) => {
 			return listbox.options.filter((option) => !option.disabled);
 		}),

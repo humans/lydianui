@@ -7,7 +7,10 @@ type TraversableItem = {
 	[key: string]: any;
 };
 
-export const useCursor = <T extends TraversableItem>(items: Readable<T[]>, uniqueBy: keyof T) => {
+export const defineCursor = <T extends TraversableItem>(
+	items: Readable<T[]>,
+	uniqueBy: keyof T
+) => {
 	const $items = () => get(items);
 
 	return defineStore<CursorState<T>, CursorActions<T>>({
