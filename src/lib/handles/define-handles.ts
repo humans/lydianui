@@ -1,4 +1,5 @@
 import { defineStore } from '$lib/store';
+import type { HandleActions, HandleConfig, HandleElement, HandleState } from '$lib/handles/types';
 
 let id = 1;
 
@@ -6,12 +7,12 @@ function next() {
 	return id++;
 }
 
-function toLabel(component, element) {
+function toLabel(component: string, element: HandleElement) {
 	return `lydian--${component}-${element.name}--:${element.id}:`;
 }
 
-export const defineHandles = (config) =>
-	defineStore({
+export const defineHandles = (config: HandleConfig) =>
+	defineStore<HandleState, HandleActions>({
 		state: {
 			elements: [],
 
@@ -37,6 +38,7 @@ export const defineHandles = (config) =>
 
 			...config
 		},
+
 		actions: {
 			$find({ elements }, name) {
 				return elements.find((element) => element.name === name);

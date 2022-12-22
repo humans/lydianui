@@ -54,6 +54,11 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<div {...$$restProps} use:clickOutside on:click-outside={handleClickOutside}>
+<div
+	{...$$restProps}
+	use:clickOutside
+	on:click-outside={handleClickOutside}
+	id={handles.firstOrNew('root')}
+>
 	<slot state={$listbox} {listbox} />
 </div>

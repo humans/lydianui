@@ -1,5 +1,6 @@
+import type { Store } from '$lib/store';
 import type { CursorStore } from '$lib/cursor/types';
-import type { Store } from '$lib/store/types';
+import type { HandleStore } from '$lib/handles';
 
 export type ListboxConfig = {
 	multiple: boolean;
@@ -36,4 +37,5 @@ export type ListboxStore = Store<ListboxState, ListboxActions>;
 export type ListboxContext = {
 	listbox: ListboxStore;
 	cursor: CursorStore<ListboxOption>;
+	handles: HandleStore;
 };

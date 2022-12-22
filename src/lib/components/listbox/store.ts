@@ -26,7 +26,7 @@ export const useListbox = (config: ListboxConfig) =>
 			$selectMany({ value }, $value) {
 				if (this.selected($value)) {
 					this.$change({
-						value: value.filter((v) => v !== $value)
+						value: value.filter((v: any) => v !== $value)
 					});
 				} else {
 					this.$change({

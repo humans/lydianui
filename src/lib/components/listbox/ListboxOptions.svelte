@@ -5,7 +5,7 @@
 	import { isAlphanumeric } from '$lib/helpers/keyboard';
 	import { getContext } from './context';
 
-	const { cursor, listbox, id } = getContext();
+	const { cursor, listbox, handles } = getContext();
 
 	const availableOptions = derived(listbox, (listbox) => {
 		return listbox.options.filter((option) => !option.disabled);
@@ -87,9 +87,9 @@
 		{...$$restProps}
 		bind:this={$listbox.$options}
 		role="listbox"
-		id={id.firstOrNew('options')}
+		id={handles.firstOrNew('options')}
 		aria-orientation="vertical"
-		aria-labelledby={$id.find('button')}
+		aria-labelledby={$handles.find('button')}
 	>
 		<slot />
 	</ul>

@@ -1,4 +1,4 @@
-import { defineHandles } from '$lib/helpers/define-handles';
+import { defineHandles } from '$lib/handles/define-handles';
 
 export const useHandles = () =>
 	defineHandles({
