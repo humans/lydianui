@@ -86,6 +86,8 @@
 		tabindex="0"
 		{...$$restProps}
 		bind:this={$listbox.$options}
+		on:close
+		on:open
 		role="listbox"
 		id={handles.firstOrNew('options')}
 		aria-orientation="vertical"

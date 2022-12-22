@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { derived } from 'svelte/store';
-	import { defineCursor } from '$lib/cursor';
 	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { useListbox } from './store';
 	import { setContext } from './context';
 	import { useHandles } from './handles';
+	import { useCursor } from '$lib/components/listbox/cursor';
 
 	export let multiple = false;
 	export let value;
@@ -22,12 +21,7 @@
 		}
 	});
 
-	const cursor = defineCursor(
-		derived(listbox, (listbox) => {
-			return listbox.options.filter((option) => !option.disabled);
-		}),
-		'key'
-	);
+	const cursor = useCursor(listbox);
 
 	const handles = useHandles();
 
@@ -58,6 +52,9 @@
 	{...$$restProps}
 	use:clickOutside
 	on:click-outside={handleClickOutside}
+	on:close
+	on:open
+	bind:this={$listbox.$root}
 	id={handles.firstOrNew('root')}
 >
 	<slot state={$listbox} {listbox} />

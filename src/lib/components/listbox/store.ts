@@ -8,6 +8,7 @@ export const useListbox = (config: ListboxConfig) =>
 			open: false,
 			options: [],
 
+			$root: null,
 			$trigger: null,
 			$options: null,
 
@@ -48,12 +49,18 @@ export const useListbox = (config: ListboxConfig) =>
 				}
 			},
 
-			open() {
+			open({ $root, $options }) {
 				this.$change({ open: true });
+
+				$root?.dispatchEvent(new CustomEvent('open'));
+				$options?.dispatchEvent(new CustomEvent('open'));
 			},
 
-			close() {
+			close({ $root, $options }) {
 				this.$change({ open: false });
+
+				$root?.dispatchEvent(new CustomEvent('close'));
+				$options?.dispatchEvent(new CustomEvent('open'));
 			},
 
 			toggle({ open }) {

@@ -18,6 +18,7 @@ export type ListboxState = ListboxConfig & {
 	open: boolean;
 	options: ListboxOption[];
 
+	$root: HTMLElement | null;
 	$trigger: HTMLElement | null;
 	$options: HTMLElement | null;
 };

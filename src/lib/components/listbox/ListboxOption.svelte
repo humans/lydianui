@@ -23,6 +23,7 @@
 
 	onMount(() => {
 		$listbox.options = [...$listbox.options, option];
+		cursor.reset();
 	});
 
 	onDestroy(() => {
