@@ -1,2 +1,2 @@
-export * from './define-handles';
-export * from './types';
+export { defineHandles } from './define-handles';
+export type { HandleElement, HandleState, HandleActions, HandleConfig, HandleStore } from './types';

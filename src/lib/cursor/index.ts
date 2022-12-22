@@ -1,2 +1,2 @@
-export * from './define-cursor';
-export * from './types';
+export { defineCursor } from './define-cursor';
+export type { CursorStore, CursorState, CursorActions } from './types';
