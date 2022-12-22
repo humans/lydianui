@@ -28,6 +28,7 @@
 
 	onDestroy(() => {
 		$listbox.options = reject($listbox.options, 'key', key);
+		cursor.reset();
 	});
 
 	function handleClick() {

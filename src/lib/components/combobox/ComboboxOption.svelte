@@ -9,7 +9,7 @@
 	export let value: any = null;
 	export let disabled: boolean = false;
 
-	const { combobox, cursor } = getContext();
+	const { combobox, cursor, handles } = getContext();
 
 	const option: ComboboxOption = {
 		key,
@@ -48,12 +48,16 @@
 		$combobox.options = [...$combobox.options, option].sort(
 			(a, b) => findOptionIndex(a) - findOptionIndex(b)
 		);
+
+		cursor.reset();
 	});
 
 	onDestroy(() => {
 		$combobox.options = reject($combobox.options, 'key', key).sort(
 			(a, b) => findOptionIndex(a) - findOptionIndex(b)
 		);
+
+		cursor.reset();
 	});
 </script>
 
@@ -65,6 +69,7 @@
 	bind:this={option.$element}
 	aria-disabled={disabled ? 'true' : 'false'}
 	aria-selected={combobox.selected(value) ? 'true' : 'false'}
+	id={handles.new('option')}
 >
 	<slot active={$active} selected={combobox.selected(value)} />
 </li>

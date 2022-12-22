@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { getContext } from './context';
 
-	const { combobox } = getContext();
+	const { combobox, handles } = getContext();
 </script>
 
 {#if $combobox.open}
-	<ul role="listbox" {...$$restProps} bind:this={$combobox.$options}>
+	<ul
+		id={handles.firstOrNew('options')}
+		role="listbox"
+		{...$$restProps}
+		bind:this={$combobox.$options}
+	>
 		<slot />
 	</ul>
 {/if}

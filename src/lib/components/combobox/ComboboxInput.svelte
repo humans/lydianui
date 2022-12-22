@@ -12,7 +12,7 @@
 
 	export let display = (value) => '';
 
-	const { combobox, cursor } = getContext();
+	const { combobox, cursor, handles } = getContext();
 
 	function handleNavigateDown(event) {
 		event.preventDefault();
@@ -86,4 +86,5 @@
 	on:focusin={combobox.open}
 	on:click={combobox.open}
 	{value}
+	id={handles.firstOrNew('input')}
 />

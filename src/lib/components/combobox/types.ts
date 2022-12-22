@@ -1,5 +1,6 @@
 import type { Store } from '$lib/store/types';
 import type { CursorStore } from '$lib/cursor/types';
+import type { HandleStore } from '$lib/handles';
 
 export type ComboboxOption = {
 	key: any;
@@ -45,4 +46,5 @@ export type ComboboxStore = Store<ComboboxState, ComboboxActions>;
 export type ComboboxContext = {
 	combobox: ComboboxStore;
 	cursor: CursorStore<ComboboxOption>;
+	handles: HandleStore;
 };

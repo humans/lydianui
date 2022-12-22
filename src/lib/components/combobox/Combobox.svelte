@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { ComboboxState, ComboboxStore } from './types';
-	import { derived } from 'svelte/store';
+	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { setContext } from './context';
 	import { useCombobox } from './store';
-	import { defineCursor } from '$lib/cursor';
-	import { clickOutside } from '$lib/actions/use-click-outside';
+	import { useHandles } from './handles';
+	import { useCursor } from './cursor';
 
 	interface $$Slots {
 		default: {
@@ -32,12 +32,9 @@
 
 	const combobox = useCombobox({ value, multiple });
 
-	const cursor = defineCursor(
-		derived(combobox, (combobox) => {
-			return combobox.options.filter((option) => !option.disabled);
-		}),
-		'key'
-	);
+	const handles = useHandles();
+
+	const cursor = useCursor(combobox);
 
 	$: $combobox.value = value;
 
@@ -49,7 +46,11 @@
 		value = state.value;
 	});
 
-	setContext({ combobox, cursor });
+	setContext({
+		combobox,
+		cursor,
+		handles
+	});
 </script>
 
 <svelte:element
@@ -58,10 +59,10 @@
 	{...$$restProps}
 	use:clickOutside
 	on:click-outside={combobox.close}
-	on:open={() => cursor.reset()}
 	on:open
 	on:close
 	on:click-outside
+	id={handles.firstOrNew('root')}
 >
 	<slot {combobox} state={$combobox} />
 </svelte:element>
