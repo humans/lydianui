@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { writable } from 'svelte/store';
 	import { setContext } from './context';
-	import { createUniqueId } from '$lib/helpers/create-unique-id';
+	import { useHandles } from './handles';
+	import { useStore } from './store';
 
 	interface $$Props {
 		as: string;
@@ -13,18 +13,15 @@
 
 	export let open;
 
-	const dialog = writable({
-		id: createUniqueId()
+	const dialog = useStore({
+		open
 	});
 
-	const aria = writable({
-		labelledby: null,
-		describedby: []
-	});
+	const handles = useHandles();
 
 	setContext({
 		dialog,
-		aria
+		handles
 	});
 
 	function handleKeydown(event) {
@@ -40,8 +37,8 @@
 	this={as}
 	{...$$restProps}
 	role="dialog"
-	aria-labelledby={$aria.labelledby}
-	aria-describedby={$aria.describedby.join(' ')}
+	aria-labelledby={$handles.find('title')}
+	aria-describedby={$handles.list('description')}
 >
 	{#if open}
 		<slot />

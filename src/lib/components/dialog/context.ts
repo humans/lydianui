@@ -1,7 +1,5 @@
-import { useContext } from '$lib/helpers/use-context';
+import { defineContext } from '$lib/helpers/define-context';
 
-export const DialogContextKey = Symbol();
+const DialogContextKey = Symbol();
 
-const { getContext, setContext } = useContext(DialogContextKey);
-
-export { getContext, setContext };
+export const { getContext, setContext } = defineContext(DialogContextKey);

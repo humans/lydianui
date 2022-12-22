@@ -8,7 +8,7 @@
 	export let disabled = false;
 	export let key;
 
-	let { listbox, cursor, a11y } = getContext();
+	let { listbox, cursor, id } = getContext();
 
 	const option = {
 		key,
@@ -52,7 +52,7 @@
 	bind:this={option.$element}
 	role="option"
 	tabindex="-1"
-	id={a11y.new('option')}
+	id={id.new('option')}
 	aria-selected={listbox.selected(value) ? 'true' : 'false'}
 	aria-disabled={disabled ? 'true' : 'false'}
 >

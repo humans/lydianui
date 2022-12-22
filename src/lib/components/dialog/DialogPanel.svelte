@@ -13,9 +13,15 @@
 
 	export let as = 'div';
 
-	const { dialog } = getContext();
+	const { handles, dialog } = getContext();
 </script>
 
-<svelte:element this={as} {...$$restProps} use:clickOutside on:click-outside>
+<svelte:element
+	this={as}
+	{...$$restProps}
+	use:clickOutside
+	on:click-outside
+	id={handles.firstOrNew('panel')}
+>
 	<slot />
 </svelte:element>

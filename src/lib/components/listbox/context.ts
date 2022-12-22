@@ -1,8 +1,6 @@
 import type { ListboxContext } from '$lib/components/listbox/types';
-import { useContext } from '$lib/helpers/use-context';
+import { defineContext } from '$lib/helpers/define-context';
 
-export const ListboxContextKey = Symbol();
+const ListboxContextKey = Symbol();
 
-const { getContext, setContext } = useContext<ListboxContext>(ListboxContextKey);
-
-export { getContext, setContext };
+export const { getContext, setContext } = defineContext<ListboxContext>(ListboxContextKey);

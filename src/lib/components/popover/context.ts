@@ -1,4 +1,4 @@
-import { useContext } from '$lib/helpers/use-context';
+import { defineContext } from '$lib/helpers/define-context';
 import type { PopoverStore } from '$lib/components/popover/types';
 
 type PopoverContext = {
@@ -7,6 +7,6 @@ type PopoverContext = {
 
 export const PopoverContextKey = Symbol();
 
-const { getContext, setContext } = useContext<PopoverContext>(PopoverContextKey);
+const { getContext, setContext } = defineContext<PopoverContext>(PopoverContextKey);
 
 export { getContext, setContext };

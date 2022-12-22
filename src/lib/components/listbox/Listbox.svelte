@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { derived, writable } from 'svelte/store';
+	import { derived } from 'svelte/store';
 	import { useCursor } from '$lib/cursor';
 	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { useListbox } from './store';
 	import { setContext } from './context';
-	import { useA11y } from '$lib/components/listbox/a11y';
+	import { useHandles } from './handles';
 
 	export let multiple = false;
 	export let value;
@@ -29,9 +29,7 @@
 		'key'
 	);
 
-	const a11y = useA11y({
-		name: 'listbox'
-	});
+	const handles = useHandles();
 
 	function handleClickOutside() {
 		if (!$listbox.open) {
@@ -44,7 +42,7 @@
 	setContext({
 		cursor,
 		listbox,
-		a11y
+		handles
 	});
 
 	function handleKeydown(event) {
