@@ -26,7 +26,7 @@ export const useCombobox = (config: ComboboxConfig) =>
 					this._selectOne(value);
 				}
 
-				$state.$root?.dispatchEvent(new CustomEvent('input', value));
+				$state.$root?.dispatchEvent(new CustomEvent('input', { detail: { value } }));
 			},
 
 			selected($state, value): boolean {
