@@ -1,5 +1,6 @@
 import type { ComboboxState, ComboboxConfig, ComboboxActions } from './types';
 import { defineStore } from '$lib/store';
+import { tick } from 'svelte';
 
 export const useCombobox = (config: ComboboxConfig) =>
 	defineStore<ComboboxState, ComboboxActions>({
@@ -25,7 +26,7 @@ export const useCombobox = (config: ComboboxConfig) =>
 					this._selectOne(value);
 				}
 
-				$state.$root?.dispatchEvent(new CustomEvent('select', value));
+				$state.$root?.dispatchEvent(new CustomEvent('input', value));
 			},
 
 			selected($state, value): boolean {
@@ -40,16 +41,22 @@ export const useCombobox = (config: ComboboxConfig) =>
 				$input?.focus({ preventScroll: true });
 			},
 
-			async open({ $root }) {
+			async open({ $root, $options }) {
 				this.$change({ open: true });
 
+				await tick();
+
 				$root?.dispatchEvent(new CustomEvent('open'));
+				$options?.dispatchEvent(new CustomEvent('open'));
 			},
 
-			close({ $root }) {
+			async close({ $root, $options }) {
 				this.$change({ open: false });
 
+				await tick();
+
 				$root?.dispatchEvent(new CustomEvent('close'));
+				$options?.dispatchEvent(new CustomEvent('close'));
 			},
 
 			toggle({ open }) {

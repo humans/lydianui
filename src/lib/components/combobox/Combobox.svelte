@@ -61,6 +61,7 @@
 	on:click-outside={combobox.close}
 	on:open
 	on:close
+	on:input
 	on:click-outside
 	id={handles.firstOrNew('root')}
 >
