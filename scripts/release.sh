@@ -9,6 +9,9 @@ then
     exit
 fi
 
+jq ".version=\"$VERSION\"" package.json > .new.package.json
+mv .new.package.json package.json
+
 for namespace in ${NAMESPACES[@]}; do
   for directory in $namespace/*; do
     package=$directory/package.json
