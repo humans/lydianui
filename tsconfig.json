@@ -12,7 +12,11 @@
 	},
 	"include": [
 		"./packages/*/**.ts"
-	]
+	],
+	"paths": {
+		"@lydianui/store": ["./packages/core/store/src"],
+		"@lydianui/handles": ["./packages/core/handles/src"],
+	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
 	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes

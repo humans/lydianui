@@ -2,7 +2,6 @@
   "name": "@lydianui/handles",
   "version": "0.1.0-beta.2",
   "description": "",
-  "main": "src/index.ts",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/humans/lydianui/issues"
   },
-  "homepage": "https://github.com/humans/lydianui#readme"
+  "homepage": "https://github.com/humans/lydianui#readme",
+  "dependencies": {
+    "@lydianui/store": "workspace:*"
+  }
 }

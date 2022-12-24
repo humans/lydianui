@@ -1,5 +1,6 @@
 {
   "name": "@lydianui/svelte",
+  "private": true,
   "version": "0.1.0-beta.2",
   "workspaces": [
     "packages/*/*"

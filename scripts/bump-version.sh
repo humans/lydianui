@@ -23,5 +23,3 @@ for namespace in ${NAMESPACES[@]}; do
     fi
   done
 done
-
-npm run compile -ws
