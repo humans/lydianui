@@ -1,0 +1,21 @@
+{
+  "name": "@lydianui/*",
+  "version": "",
+  "description": "",
+  "main": "src/index.ts",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humans/lydianui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/humans/lydianui/issues"
+  },
+  "homepage": "https://github.com/humans/lydianui#readme"
+}
