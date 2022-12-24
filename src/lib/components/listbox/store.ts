@@ -1,4 +1,4 @@
-import { defineStore } from '$lib/store';
+import { defineStore } from '@lydianui/store';
 
 import type { ListboxConfig, ListboxState, ListboxActions } from '$lib/components/listbox/types';
 
