@@ -1,6 +1,9 @@
 {
 	"name": "@lydianui/svelte",
 	"version": "0.2.3",
+	"workspaces": [
+		"packages/*/*"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"docs:build": "vite build",
