@@ -1,8 +1,8 @@
 {
   "name": "@lydianui/svelte-store",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-beta.3",
   "description": "",
-  "main": "src",
+  "main": "src/index.ts",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +22,6 @@
   "peerDependencies": {
     "svelte": "^3.20.0"
   },
-  "main": "src/index.ts",
   "exports": {
     ".": {
       "transpiled": "./dist/index.js",
