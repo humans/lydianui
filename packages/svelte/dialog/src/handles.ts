@@ -1,4 +1,4 @@
-import { defineHandles } from 'packages/svelte/handles';
+import { defineHandles } from '@lydianui/svelte-define-handles';
 
 export const useHandles = () =>
 	defineHandles({

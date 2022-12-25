@@ -1,5 +1,5 @@
 {
-  "name": "@lydianui/svelte-handles",
+  "name": "@lydianui/svelte-define-handles",
   "version": "0.1.0-beta.2",
   "description": "",
   "scripts": {
@@ -17,9 +17,6 @@
     "url": "https://github.com/humans/lydianui/issues"
   },
   "homepage": "https://github.com/humans/lydianui#readme",
-  "dependencies": {
-    "@lydianui/store": "^0.1.0-beta.2"
-  },
   "peerDependencies": {
     "svelte": "^3.20.0"
   },
@@ -29,5 +26,8 @@
       "transpiled": "./dist/index.js",
       "default": "./src/index.ts"
     }
+  },
+  "dependencies": {
+    "@lydianui/svelte-define-store": "file:../define-store"
   }
 }

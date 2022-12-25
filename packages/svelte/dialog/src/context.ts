@@ -1,5 +1,5 @@
-import { defineContext } from '@lydianui/utilities/context';
-import type { HandleStore } from 'packages/svelte/handles';
+import { defineContext } from '@lydianui/svelte-define-context';
+import type { HandleStore } from '@lydianui/svelte-define-handles';
 import type { DialogStore } from './types';
 
 const DialogContextKey = Symbol();

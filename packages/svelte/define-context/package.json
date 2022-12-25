@@ -1,6 +1,6 @@
 {
-  "name": "@lydianui/svelte-utilities",
-  "version": "0.1.0-beta.2",
+  "name": "@lydianui/svelte-define-context",
+  "version": "",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,19 +17,16 @@
     "url": "https://github.com/humans/lydianui/issues"
   },
   "homepage": "https://github.com/humans/lydianui#readme",
-  "devDependencies": {},
   "peerDependencies": {
     "svelte": "^3.20.0"
   },
+  "dependencies": {},
+  "devDependencies": {},
   "main": "src/index.ts",
   "exports": {
     ".": {
       "transpiled": "./dist/index.js",
       "default": "./src/index.ts"
-    },
-    "./actions": {
-      "transpiled": "./dist/actions/index.js",
-      "default": "./src/actions/index.ts"
     }
   }
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { clickOutside } from 'packages/svelte/utilities';
+	import { clickOutside } from '@lydianui/svelte-utilities/actions';
 	import { getContext } from './context';
 
 	interface $$Props {

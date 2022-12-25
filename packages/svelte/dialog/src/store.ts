@@ -1,4 +1,4 @@
-import { defineStore } from '@lydianui/svelte-store';
+import { defineStore } from '@lydianui/svelte-define-store';
 import type { DialogActions, DialogState } from './types';
 
 type DialogConfig = {
@@ -10,5 +10,9 @@ export const useStore = (config: DialogConfig) =>
 		state: {
 			...config
 		},
-		actions: {}
+		actions: {
+			close() {
+				this.$change({ open: false });
+			}
+		}
 	});

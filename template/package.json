@@ -2,10 +2,10 @@
   "name": "@lydianui/*",
   "version": "",
   "description": "",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+    "clean": "rm -rf dist/",
+    "compile": "npm run clean && tsc -p tsconfig.pkg.json"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   "peerDependencies": {
     "svelte": "^3.20.0"
   },
+  "dependencies": {},
+  "devDependencies": {},
   "main": "src/index.ts",
   "exports": {
     ".": {
