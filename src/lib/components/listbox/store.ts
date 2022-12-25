@@ -1,4 +1,4 @@
-import { defineStore } from '@lydianui/store';
+import { defineStore } from 'packages/svelte/store';
 
 import type { ListboxConfig, ListboxState, ListboxActions } from '$lib/components/listbox/types';
 

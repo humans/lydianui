@@ -1,11 +1,13 @@
 {
-  "name": "@lydianui/handles",
+  "name": "@lydianui/svelte-store",
   "version": "0.1.0-beta.2",
   "description": "",
+  "main": "src",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+    "clean": "rm -rf dist/",
+    "compile": "npm run clean && tsc -p tsconfig.pkg.json"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,14 @@
     "url": "https://github.com/humans/lydianui/issues"
   },
   "homepage": "https://github.com/humans/lydianui#readme",
-  "dependencies": {
-    "@lydianui/store": "workspace:*"
+  "peerDependencies": {
+    "svelte": "^3.20.0"
+  },
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "transpiled": "./dist/index.js",
+      "default": "./src/index.ts"
+    }
   }
 }

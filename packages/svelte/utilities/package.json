@@ -1,11 +1,12 @@
 {
-  "name": "@lydianui/*",
-  "version": "",
+  "name": "@lydianui/svelte-utilities",
+  "version": "0.1.0-beta.2",
   "description": "",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+    "clean": "rm -rf dist/",
+    "compile": "npm run clean && tsc -p tsconfig.pkg.json"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,10 @@
     ".": {
       "transpiled": "./dist/index.js",
       "default": "./src/index.ts"
+    },
+    "./actions": {
+      "transpiled": "./dist/actions/index.js",
+      "default": "./src/actions/index.ts"
     }
   }
 }

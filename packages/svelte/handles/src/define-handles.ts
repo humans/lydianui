@@ -1,4 +1,4 @@
-import { defineStore } from '@lydianui/store';
+import { defineStore } from 'packages/svelte/store';
 import type { HandleActions, HandleConfig, HandleElement, HandleState } from './types';
 
 let id = 1;

@@ -14,8 +14,10 @@
 		"./packages/*/**.ts"
 	],
 	"paths": {
-		"@lydianui/store": ["./packages/core/store/src"],
-		"@lydianui/handles": ["./packages/core/handles/src"],
+		"@lydianui/store": ["./packages/svelte/store/src"],
+		"@lydianui/handles": ["./packages/svelte/handles/src"],
+		"@lydianui/utilities": ["./packages/svelte/utilities/src"],
+		"@lydianui/svelte-dialog": ["./packages/svelte/dialog/src"]
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
