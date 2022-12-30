@@ -10,7 +10,7 @@
 	{...$$restProps}
 	on:click|preventDefault={listbox.toggle}
 	bind:this={$listbox.$trigger}
-	aria-haspopup="true"
+	aria-haspopup="listbox"
 	aria-expanded={$listbox.open ? 'true' : 'false'}
 	aria-controls={$handles.find('options')}
 >

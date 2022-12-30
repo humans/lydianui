@@ -11,12 +11,6 @@
 		return listbox.options.filter((option) => !option.disabled);
 	});
 
-	function handleEnter(event) {
-		event.preventDefault();
-
-		listbox.select($cursor.item.value);
-	}
-
 	let query = '';
 	function handleSearch(event) {
 		event.preventDefault();
@@ -40,6 +34,12 @@
 
 		query = '';
 	}, 150);
+
+	function handleEnter(event) {
+		event.preventDefault();
+
+		listbox.select($cursor.item.value);
+	}
 
 	function handleNavigationDown(event) {
 		event.preventDefault();

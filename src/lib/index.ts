@@ -2,6 +2,7 @@ export * as Popover from './components/popover';
 export * as Dialog from './components/dialog';
 export * as Combobox from './components/combobox';
 export * as Listbox from './components/listbox';
+export * as Dropdown from './components/dropdown';
 
 export { default as PopoverRoot } from './components/popover/Popover.svelte';
 export { default as PopoverButton } from './components/popover/PopoverButton.svelte';
