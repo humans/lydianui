@@ -24,9 +24,13 @@
 		handles
 	});
 
+	dialog.subscribe((dialog) => {
+		open = dialog.open;
+	});
+
 	function handleKeydown(event) {
 		if (event.key === 'Escape') {
-			open = false;
+			$dialog.open = false;
 		}
 	}
 </script>
@@ -41,6 +45,6 @@
 	aria-describedby={$handles.list('description')}
 >
 	{#if open}
-		<slot />
+		<slot {dialog} />
 	{/if}
 </svelte:element>

@@ -10,5 +10,9 @@ export const useStore = (config: DialogConfig) =>
 		state: {
 			...config
 		},
-		actions: {}
+		actions: {
+			close() {
+				this.$change({ open: false });
+			}
+		}
 	});
