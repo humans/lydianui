@@ -17,6 +17,13 @@
 	});
 </script>
 
-<svelte:element this={as} {...$$restProps} id={handles.firstOrNew('root')}>
+<svelte:element
+	this={as}
+	{...$$restProps}
+	id={handles.firstOrNew('root')}
+	on:open
+	on:close
+	bind:this={$dropdown.$root}
+>
 	<slot {dropdown} state={$dropdown} />
 </svelte:element>

@@ -13,16 +13,24 @@ export const useDropdown = () =>
 		},
 
 		actions: {
-			open() {
+			open({ $root }) {
 				this.$change({ open: true });
+
+				$root?.dispatchEvent(new CustomEvent('open'));
 			},
 
-			close() {
+			close({ $root }) {
 				this.$change({ open: false });
+
+				$root?.dispatchEvent(new CustomEvent('close'));
 			},
 
 			toggle({ open }) {
-				this.$change({ open: !open });
+				if (open) {
+					this.close();
+				} else {
+					this.open();
+				}
 			},
 
 			select(_, item) {
