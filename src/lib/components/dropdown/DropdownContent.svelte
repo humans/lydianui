@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext } from './context';
+	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { scrollContainerTo } from '$lib/helpers/navigation';
 
 	export let as = 'div';
@@ -54,6 +55,8 @@
 {#if $dropdown.open}
 	<svelte:element
 		this={as}
+		use:clickOutside
+		on:click-outside={dropdown.close}
 		{...$$restProps}
 		bind:this={$dropdown.$content}
 		id={handles.firstOrNew('content')}
