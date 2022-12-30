@@ -11,14 +11,15 @@
 		"strict": true
 	},
 	"include": [
-		"./packages/*/**.ts"
+		"./packages/*/**.ts",
+		"./packages/*/**.svelte"
 	],
 	"paths": {
-		"@lydianui/svelte-define-store": ["./packages/svelte/define-store/src"],
-		"@lydianui/svelte-define-handles": ["./packages/svelte/define-handles/src"],
-		"@lydianui/svelte-define-context": ["./packages/svelte/define-context/src"],
-		"@lydianui/svelte-utilities": ["./packages/svelte/utilities/src"],
-		"@lydianui/svelte-dialog": ["./packages/svelte/dialog/src"]
+		"@lydianui/svelte-define-store": "./packages/svelte/define-store/src",
+		"@lydianui/svelte-define-handles": "./packages/svelte/define-handles/src",
+		"@lydianui/svelte-define-context": "./packages/svelte/define-context/src",
+		"@lydianui/svelte-utilities": "./packages/svelte/utilities/src",
+		"@lydianui/svelte-dialog": "./packages/svelte/dialog/src"
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

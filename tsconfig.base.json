@@ -6,12 +6,13 @@
     "dist"
   ],
   "compilerOptions": {
-    "strict": true,
-    "resolveJsonModule": true,
-    "sourceMap": true,
+    "allowJs": true,
+    "checkJs": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true
   }
 }

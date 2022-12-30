@@ -1,4 +1,4 @@
-<script>
+<script land="ts">
 	import { getContext } from './context';
 
 	export let as = 'div';
