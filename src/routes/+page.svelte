@@ -1,5 +1,18 @@
 <script>
+	import '../css/app.css';
+	import Navigatable from '$lib/components/navigatable/Navigatable.svelte';
+	import { readable } from 'svelte/store';
+
 	export const prerender = true;
+
+	const components = [
+		{ name: 'Cursor' },
+		{ name: 'Dialog' },
+		{ name: 'Dropdown Menu' },
+		{ name: 'Combobox' },
+		{ name: 'Listbox' },
+		{ name: 'Popover' }
+	];
 </script>
 
 <svelte:head>
@@ -7,3 +20,11 @@
 </svelte:head>
 
 <h1>Lydian UI</h1>
+
+<Navigatable items={readable(components)} key="name" let:active>
+	<ul>
+		{#each components as component}
+			<li class:bg-neutral-100={active?.name === component.name}>{component.name}</li>
+		{/each}
+	</ul>
+</Navigatable>

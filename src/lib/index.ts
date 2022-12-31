@@ -4,6 +4,12 @@ export * as Combobox from './components/combobox';
 export * as Listbox from './components/listbox';
 export * as Dropdown from './components/dropdown';
 
+export { defineStore } from './store';
+export { defineContext } from './helpers/define-context';
+export { defineCursor } from './cursor';
+
+export { default as Navigatable } from './components/navigatable/Navigatable.svelte';
+
 export { default as PopoverRoot } from './components/popover/Popover.svelte';
 export { default as PopoverButton } from './components/popover/PopoverButton.svelte';
 export { default as PopoverPanel } from './components/popover/PopoverPanel.svelte';

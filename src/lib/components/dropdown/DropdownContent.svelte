@@ -48,6 +48,14 @@
 				return handleEnter(event);
 		}
 	}
+
+	function handleClickOutside(event) {
+		if ($dropdown.$root?.contains(event.detail.relatedTarget)) {
+			return;
+		}
+
+		dropdown.close();
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -56,7 +64,7 @@
 	<svelte:element
 		this={as}
 		use:clickOutside
-		on:click-outside={dropdown.close}
+		on:click-outside={handleClickOutside}
 		{...$$restProps}
 		bind:this={$dropdown.$content}
 		id={handles.firstOrNew('content')}

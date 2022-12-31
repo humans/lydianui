@@ -20,7 +20,7 @@ export const defineCursor = <T extends TraversableItem>(
 		actions: {
 			$position({ item }) {
 				if (!item) {
-					return 0;
+					return -1;
 				}
 
 				return $items().findIndex(($item) => $item[uniqueBy] === item[uniqueBy]);
