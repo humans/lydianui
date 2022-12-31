@@ -64,6 +64,6 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<svelte:element this={as} {...$$restProps} aria-orientation={orientation}>
+<svelte:element this={as} {...$$restProps}>
 	<slot active={$cursor.item} />
 </svelte:element>
