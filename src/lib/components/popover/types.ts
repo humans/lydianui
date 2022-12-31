@@ -6,7 +6,7 @@ export enum BehaviorType {
 }
 
 export type PopoverState = {
-	readonly key: unique symbol;
+	readonly key: symbol;
 	behavior: BehaviorType;
 	open: boolean;
 

@@ -20,7 +20,7 @@
 
 	export let wrap = true;
 
-	export let focus = true;
+	export let scroll = true;
 
 	export let scrollable;
 
@@ -30,7 +30,7 @@
 
 	setContext({
 		key,
-		focus,
+		scroll,
 		scrollable,
 		cursor
 	});
@@ -54,12 +54,6 @@
 		cursor.previous();
 	}
 
-	function handleEnter(event) {
-		event.preventDefault();
-
-		dispatch('select', { item: $cursor.item });
-	}
-
 	function handleKeydown(event) {
 		switch (event.key) {
 			case KEY_NEXT:
@@ -67,9 +61,6 @@
 
 			case KEY_PREVIOUS:
 				return handlePrevious(event);
-
-			case 'Enter':
-				return handleEnter(event);
 		}
 	}
 </script>
