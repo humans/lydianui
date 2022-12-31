@@ -1,5 +1,5 @@
 import type { Readable } from 'svelte/store';
-import type { CursorState, CursorActions } from './types';
+import type { CursorState, CursorActions, CursorConfig } from './types';
 import { get } from 'svelte/store';
 import { defineStore } from '$lib/store';
 
@@ -7,15 +7,22 @@ type TraversableItem = {
 	[key: string]: any;
 };
 
+const CursorConfigDefaults = {
+	wrap: true
+};
+
 export const defineCursor = <T extends TraversableItem>(
 	items: Readable<T[]>,
-	uniqueBy: keyof T
+	uniqueBy: keyof T,
+	config: CursorConfig = CursorConfigDefaults
 ) => {
 	const $items = () => get(items);
 
 	return defineStore<CursorState<T>, CursorActions<T>>({
 		state: {
-			item: null
+			item: null,
+
+			...config
 		},
 		actions: {
 			$position({ item }) {
@@ -24,6 +31,14 @@ export const defineCursor = <T extends TraversableItem>(
 				}
 
 				return $items().findIndex(($item) => $item[uniqueBy] === item[uniqueBy]);
+			},
+
+			$onFirst() {
+				return this.$position() === 0;
+			},
+
+			$onLast() {
+				return this.$position() + 1 === $items().length;
 			},
 
 			on({ item }, $item: T) {
@@ -42,13 +57,21 @@ export const defineCursor = <T extends TraversableItem>(
 				}
 			},
 
-			next() {
+			next({ wrap }) {
+				if (!wrap && this.$onLast()) {
+					return;
+				}
+
 				const next = (this.$position() + 1) % $items().length;
 
 				this.$change({ item: $items()[next] });
 			},
 
-			previous() {
+			previous({ wrap }) {
+				if (!wrap && this.$onFirst()) {
+					return;
+				}
+
 				const previous = (this.$position() + $items().length - 1) % $items().length;
 
 				this.$change({ item: $items()[previous] });

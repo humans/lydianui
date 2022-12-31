@@ -3,34 +3,67 @@
 	import { createEventDispatcher } from 'svelte';
 	import type { Readable } from 'svelte/store';
 
+	type Orientation = 'vertical' | 'horizontal';
+
+	interface $$Props {
+		orientation: Orientation;
+	}
+
+	export let as = 'div';
+
 	export let items: Readable<any>;
+
 	export let key: string;
 
-	const cursor = defineCursor(items, key);
+	export let orientation: Orientation = 'vertical';
+
+	export let wrap = true;
+
+	const cursor = defineCursor(items, key, {
+		wrap
+	});
 
 	const dispatch = createEventDispatcher();
 
+	const [KEY_PREVIOUS, KEY_NEXT] = {
+		vertical: ['ArrowUp', 'ArrowDown'],
+		horizontal: ['ArrowLeft', 'ArrowRight']
+	}[orientation];
+
+	function handleNext(event) {
+		event.preventDefault();
+
+		cursor.next();
+	}
+
+	function handlePrevious(event) {
+		event.preventDefault();
+
+		cursor.previous();
+	}
+
+	function handleEnter(event) {
+		event.preventDefault();
+
+		dispatch('select', { item: $cursor.item });
+	}
+
 	function handleKeydown(event) {
-		if (event.key === 'ArrowDown') {
-			event.preventDefault();
+		switch (event.key) {
+			case KEY_NEXT:
+				return handleNext(event);
 
-			cursor.next();
-		}
+			case KEY_PREVIOUS:
+				return handlePrevious(event);
 
-		if (event.key === 'ArrowUp') {
-			event.preventDefault();
-
-			cursor.previous();
-		}
-
-		if (event.key === 'Enter' && $cursor.item) {
-			event.preventDefault();
-
-			dispatch('select', { item: $cursor.item });
+			case 'Enter':
+				return handleEnter(event);
 		}
 	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
 
-<slot active={$cursor.item} />
+<svelte:element this={as} {...$$restProps} aria-orientation={orientation}>
+	<slot active={$cursor.item} />
+</svelte:element>
