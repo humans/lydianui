@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { Readable } from 'svelte/store';
-	import { createEventDispatcher } from 'svelte';
+	import type { Orientation, Keybindings } from './types';
 	import { defineCursor } from '$lib/cursor';
 	import { setContext } from './context';
-
-	type Orientation = 'vertical' | 'horizontal';
+	import { useKeyboard } from './keyboard';
 
 	interface $$Props {
 		orientation: Orientation;
+		keybindings: Keybindings;
 	}
 
 	export let as = 'div';
@@ -24,6 +24,8 @@
 
 	export let scrollable;
 
+	export let keybindings: Keybindings;
+
 	const cursor = defineCursor(items, key, {
 		wrap
 	});
@@ -35,10 +37,7 @@
 		cursor
 	});
 
-	const [KEY_PREVIOUS, KEY_NEXT] = {
-		vertical: ['ArrowUp', 'ArrowDown'],
-		horizontal: ['ArrowLeft', 'ArrowRight']
-	}[orientation];
+	const { previous: KEY_PREVIOUS, next: KEY_NEXT } = keybindings ?? useKeyboard(orientation);
 
 	function handleNext(event) {
 		event.preventDefault();
@@ -53,12 +52,12 @@
 	}
 
 	function handleKeydown(event) {
-		switch (event.key) {
-			case KEY_NEXT:
-				return handleNext(event);
+		if (KEY_PREVIOUS.includes(event.key)) {
+			return handlePrevious(event);
+		}
 
-			case KEY_PREVIOUS:
-				return handlePrevious(event);
+		if (KEY_NEXT.includes(event.key)) {
+			return handleNext(event);
 		}
 	}
 </script>
