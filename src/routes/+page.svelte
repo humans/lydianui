@@ -1,6 +1,6 @@
 <script>
 	import '../css/app.css';
-	import { Navigatable } from '$lib';
+	import { NavigatableRoot, NavigatableItem } from '$lib';
 	import { readable } from 'svelte/store';
 
 	export const prerender = true;
@@ -24,7 +24,7 @@
 
 	<h2 id="navigation-list">Navigation List</h2>
 
-	<Navigatable
+	<NavigatableRoot
 		items={readable(components)}
 		on:select={(event) => alert(event.detail.item.name)}
 		key="name"
@@ -32,13 +32,14 @@
 		role="listbox"
 		aria-orientation="horizontal"
 		aria-labelledby="navigation-list"
-		let:active
 		class="[ flex ]"
 	>
 		{#each components as component}
-			<div role="option" tabindex="-1" class:bg-neutral-100={active?.name === component.name}>
-				{component.name}
-			</div>
+			<NavigatableItem role="option" key={component.name} let:active>
+				<span class:bg-neutral-100={active}>
+					{component.name}
+				</span>
+			</NavigatableItem>
 		{/each}
-	</Navigatable>
+	</NavigatableRoot>
 </main>

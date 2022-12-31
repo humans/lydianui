@@ -4,6 +4,7 @@ export type CursorStore<T> = Writable<CursorState<T>> & CursorActions<T>;
 
 export type CursorState<T> = {
 	item: T | null;
+	uniqueBy: keyof T;
 	wrap: boolean;
 };
 

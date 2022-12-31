@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { defineCursor } from '$lib/cursor';
-	import { createEventDispatcher } from 'svelte';
 	import type { Readable } from 'svelte/store';
+	import { createEventDispatcher } from 'svelte';
+	import { defineCursor } from '$lib/cursor';
+	import { setContext } from './context';
 
 	type Orientation = 'vertical' | 'horizontal';
 
@@ -21,6 +22,11 @@
 
 	const cursor = defineCursor(items, key, {
 		wrap
+	});
+
+	setContext({
+		key,
+		cursor
 	});
 
 	const dispatch = createEventDispatcher();
@@ -65,5 +71,5 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <svelte:element this={as} {...$$restProps}>
-	<slot active={$cursor.item} />
+	<slot />
 </svelte:element>

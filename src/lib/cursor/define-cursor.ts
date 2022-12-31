@@ -22,6 +22,8 @@ export const defineCursor = <T extends TraversableItem>(
 		state: {
 			item: null,
 
+			uniqueBy,
+
 			...config
 		},
 		actions: {
@@ -39,10 +41,6 @@ export const defineCursor = <T extends TraversableItem>(
 
 			$onLast() {
 				return this.$position() + 1 === $items().length;
-			},
-
-			on({ item }, $item: T) {
-				return item && item[uniqueBy] === $item[uniqueBy];
 			},
 
 			select(state, item: T) {

@@ -3,12 +3,14 @@ export * as Dialog from './components/dialog';
 export * as Combobox from './components/combobox';
 export * as Listbox from './components/listbox';
 export * as Dropdown from './components/dropdown';
+export * as Navigatable from './objects/navigatable';
 
 export { defineStore } from './store';
 export { defineContext } from './helpers/define-context';
 export { defineCursor } from './cursor';
 
-export { default as Navigatable } from './objects/navigatable/Navigatable.svelte';
+export { default as NavigatableRoot } from './objects/navigatable/Navigatable.svelte';
+export { default as NavigatableItem } from './objects/navigatable/NavigatableItem.svelte';
 
 export { default as PopoverRoot } from './components/popover/Popover.svelte';
 export { default as PopoverButton } from './components/popover/PopoverButton.svelte';
