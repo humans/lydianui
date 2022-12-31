@@ -35,8 +35,6 @@
 		cursor
 	});
 
-	const dispatch = createEventDispatcher();
-
 	const [KEY_PREVIOUS, KEY_NEXT] = {
 		vertical: ['ArrowUp', 'ArrowDown'],
 		horizontal: ['ArrowLeft', 'ArrowRight']
