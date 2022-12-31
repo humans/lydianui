@@ -20,12 +20,18 @@
 
 	export let wrap = true;
 
+	export let focus = true;
+
+	export let scrollable;
+
 	const cursor = defineCursor(items, key, {
 		wrap
 	});
 
 	setContext({
 		key,
+		focus,
+		scrollable,
 		cursor
 	});
 

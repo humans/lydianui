@@ -28,17 +28,15 @@
 		items={readable(components)}
 		on:select={(event) => alert(event.detail.item.name)}
 		key="name"
-		orientation="horizontal"
+		aria-orientation="vertical"
 		role="listbox"
-		aria-orientation="horizontal"
 		aria-labelledby="navigation-list"
-		class="[ flex ]"
 	>
 		{#each components as component}
 			<NavigatableItem role="option" key={component.name} let:active>
-				<span class:bg-neutral-100={active}>
+				<div class:bg-red-100={active} class="[ py-24 ]">
 					{component.name}
-				</span>
+				</div>
 			</NavigatableItem>
 		{/each}
 	</NavigatableRoot>
