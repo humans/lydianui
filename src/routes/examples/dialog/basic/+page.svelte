@@ -40,6 +40,7 @@
 			transition:scale={{ start: 0.92, duration: 250 }}
 		>
 			<Dialog.Panel
+				on:mount={() => console.error('panel mounted')}
 				class="[ w-[500px] border bg-neutral-50 rounded-xl px-8 py-6 relative z-50 shadow-2xl shadow-neutral-600/10 max-w-2xl ]"
 			>
 				<Dialog.Title as="h1" class="[ text-base font-bold ]">
