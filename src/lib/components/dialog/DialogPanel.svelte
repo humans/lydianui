@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/actions/use-click-outside';
 	import { getContext } from './context';
-	import { onMount } from 'svelte';
-	// import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	interface $$Props {
 		as: string;
@@ -20,7 +19,11 @@
 	const { handles, dialog } = getContext();
 
 	onMount(() => {
-		element?.dispatchEvent(new CustomEvent('mount'));
+		element?.dispatchEvent(new CustomEvent('open'));
+	});
+
+	onDestroy(() => {
+		element?.dispatchEvent(new CustomEvent('close'));
 	});
 </script>
 
@@ -31,7 +34,8 @@
 	on:click-outside
 	id={handles.firstOrNew('panel')}
 	bind:this={element}
-	on:mount
+	on:open
+	on:close
 >
 	<slot />
 </svelte:element>
