@@ -49,7 +49,11 @@ export const useCombobox = (config: ComboboxConfig) =>
 				$input.value = '';
 			},
 
-			async open({ $root, $options }) {
+			async open({ open, $root, $options }) {
+				if (open) {
+					return;
+				}
+
 				this.$change({ open: true });
 
 				await tick();
@@ -58,7 +62,11 @@ export const useCombobox = (config: ComboboxConfig) =>
 				$options?.dispatchEvent(new CustomEvent('open'));
 			},
 
-			async close({ $root, $options }) {
+			async close({ open, $root, $options }) {
+				if (!open) {
+					return;
+				}
+
 				this.$change({ open: false });
 
 				await tick();

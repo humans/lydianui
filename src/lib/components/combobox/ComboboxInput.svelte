@@ -33,6 +33,10 @@
 	function handleEnter(event) {
 		event.preventDefault();
 
+		if (!$cursor.item) {
+			return;
+		}
+
 		combobox.select($cursor.item?.value);
 	}
 
