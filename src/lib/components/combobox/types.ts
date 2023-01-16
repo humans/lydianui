@@ -19,7 +19,7 @@ export type ComboboxState = ComboboxConfig & {
 	options: ComboboxOption[];
 	$group: HTMLElement | null;
 	$root: HTMLElement | null;
-	$input: HTMLElement | null;
+	$input: HTMLInputElement | null;
 	$options: HTMLElement | null;
 };
 

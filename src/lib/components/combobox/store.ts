@@ -41,6 +41,14 @@ export const useCombobox = (config: ComboboxConfig) =>
 				$input?.focus({ preventScroll: true });
 			},
 
+			clear({ $input }) {
+				if (!$input) {
+					return;
+				}
+
+				$input.value = '';
+			},
+
 			async open({ $root, $options }) {
 				this.$change({ open: true });
 
