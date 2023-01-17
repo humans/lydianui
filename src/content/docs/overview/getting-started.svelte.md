@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-byline: Some quick description about the page itself.
+subheading: Some quick description about the page itself.
 ---
 
 ## Installation

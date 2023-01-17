@@ -1,6 +1,6 @@
 ---
 title: Listbox
-byline: Some byline
+subheading: Some subheading
 ---
 
 <script>

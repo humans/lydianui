@@ -1,6 +1,6 @@
 ---
 title: Dialog
-byline: This is some description about the dialog component.
+subheading: This is some description about the dialog component.
 ---
 
 <script lang="ts">

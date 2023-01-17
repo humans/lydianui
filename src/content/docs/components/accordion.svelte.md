@@ -1,6 +1,6 @@
 ---
 title: Some Title
-byline: Some byline
+subheading: Some subheading
 ---
 
 

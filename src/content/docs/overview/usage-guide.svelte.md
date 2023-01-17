@@ -1,6 +1,6 @@
 ---
 title: Usage Guide
-byline: Some quick description about the page itself.
+subheading: Some quick description about the page itself.
 ---
 
 Some random blurb about this article on what the page is about.

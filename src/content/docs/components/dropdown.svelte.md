@@ -1,5 +1,5 @@
 ---
-title: Some Title
+title: Dropdown
 subheading: Some subheading
 ---
 

@@ -1,6 +1,6 @@
 interface PostData {
 	title: string;
-	byline?: string;
+	subheading?: string;
 	examples?: {
 		text: string;
 		link: string;
@@ -10,11 +10,11 @@ interface PostData {
 export async function get(category: string, slug: string) {
 	const { default: body, metadata } = await import(`../content/docs/${category}/${slug}.svelte.md`);
 
-	const { title, byline, examples } = metadata as PostData;
+	const { title, subheading, examples } = metadata as PostData;
 
 	return {
 		title,
-		byline,
+		subheading,
 		examples,
 		slug,
 		body

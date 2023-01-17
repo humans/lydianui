@@ -1,6 +1,6 @@
 ---
 title: Combobox
-byline: Some description on when to use a combobox.
+subheading: Some description on when to use a combobox.
 
 examples:
     - text: Autocomplete (Single Value)
