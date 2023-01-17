@@ -32,20 +32,22 @@
 	<TheHeader />
 
 	<main>
-		<article class="landing-page">
+		<article class="landing-page [ antialiased ]">
 			<section class="landing-page__hero [ mt-[5rem] pt-48 ]">
 				<ContentContainer size="prose">
 					<div
-						class="[ max-w-xl flex flex-col items-center md:items-start text-center md:text-left ]"
+						class="[ max-w-xl flex flex-col items-center md:items-start text-center md:text-left optimize-legibility ]"
 					>
 						<div class="fleuron [ text-base text-muted mb-2 ]">A headless Svelte package</div>
 
-						<h1 class="[ text-4xl md:text-6xl font-bold tracking-tight ]">
-							Build fast without compromise
+						<h1 class="[ text-4xl md:text-5xl font-bold tracking-tight ]">
+							Create web apps without compromise
 						</h1>
 
-						<p class="[ leading-relaxed text-muted mt-4 md:text-xl md:leading-relaxed ]">
-							Unstyled and fully accessible designed for Svelte.
+						<p
+							class="[ leading-relaxed text-muted mt-4 md:text-xl md:leading-relaxed tracking-[-0.011em] ]"
+						>
+							Fully accessible, unstyled components designed for Svelte.
 						</p>
 
 						<div>

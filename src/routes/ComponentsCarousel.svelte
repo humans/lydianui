@@ -27,6 +27,12 @@
 		--carousel-padding: 8vw;
 
 		padding-left: var(--carousel-padding);
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 
 		@screen md {
 			--carousel-padding: 6vw;

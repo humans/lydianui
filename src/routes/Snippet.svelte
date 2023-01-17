@@ -6,21 +6,16 @@
 
 	loadLanguages(['svelte']);
 
-	let element;
-
 	onMount(() => {
-		console.error(Prism.languages);
 		Prism.highlightAll();
-		Prism.highlightElement(element);
 	});
 </script>
 
 <div
 	class="prose  [ transition hover:-translate-y-px hover:shadow-2xl hover:shadow-accent-base/20 rounded-xl ]"
 >
-	<pre class="language-svelte"><code
+	<pre class="language-svelte" tabindex="-1"><code
 			class="language-svelte [ leading-[2] text-[13px] tracking-tight ]"
-			bind:this={element}
 			>{`<script>
   import { Combobox } from '@lydianui/svelte'
 
