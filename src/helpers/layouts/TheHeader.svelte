@@ -1,10 +1,14 @@
+<script>
+	import ContentContainer from '@components/ContentContainer.svelte';
+</script>
+
 <header
 	class="the-header [ h-[4.5rem] flex fixed top-0 left-0 right-0 w-full bg-canvas/50 backdrop-blur z-10 ]"
 >
-	<div class="[ max-w-[90rem] w-full mx-auto px-8 flex items-center ]">
+	<ContentContainer size="max" class="[ flex items-center ]">
 		<div class="[ md:w-64 flex-items-center shrink-0 ]">
 			<div class="the-header__logo">
-				<strong>lydianui</strong>
+				<a href="/" class="[ font-black ]">lydianui</a>
 			</div>
 		</div>
 
@@ -21,5 +25,5 @@
 				<li><a href="" class="[ text-muted hover:text-white transition ]">Case Studies</a></li>
 			</ul>
 		</div>
-	</div>
+	</ContentContainer>
 </header>
