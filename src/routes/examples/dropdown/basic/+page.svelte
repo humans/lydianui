@@ -2,7 +2,7 @@
 	import { computePosition } from '@floating-ui/dom';
 	import { tick } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import ChevronDown from '@iconsChevronDown.svelte';
+	import ChevronDown from '@icons/ChevronDown.svelte';
 	import { DropdownRoot, DropdownContent, DropdownTrigger } from '$lib';
 	import DropdownItem from './DropdownItem.svelte';
 	import DropdownSeparator from './DropdownSeparator.svelte';
