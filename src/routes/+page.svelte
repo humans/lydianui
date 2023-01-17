@@ -4,7 +4,7 @@
 	import ContentContainer from '@components/ContentContainer.svelte';
 	import Button from '@components/Button.svelte';
 	import ArrowRight from '../site/icons/outline/ArrowRight.svelte';
-	import TheFooter from '$helpers/layouts/TheFooter.svelte';
+	import TheFooter from '@layouts/TheFooter.svelte';
 	import ComponentsCarousel from './ComponentsCarousel.svelte';
 
 	const features = [

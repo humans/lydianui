@@ -1,7 +1,6 @@
 <script>
-	import { afterUpdate, onMount } from 'svelte';
-	import { afterNavigate } from '$app/navigation';
-	import { toc } from '$helpers/layouts/table-of-contents';
+	import { afterUpdate } from 'svelte';
+	import { toc } from '@layouts/table-of-contents';
 
 	export let post;
 

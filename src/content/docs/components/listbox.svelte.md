@@ -4,7 +4,7 @@ byline: Some byline
 ---
 
 <script>
-import Demo from "$helpers/components/Demo.svelte"
+import Demo from "@components/Demo.svelte"
 </script>
 
 

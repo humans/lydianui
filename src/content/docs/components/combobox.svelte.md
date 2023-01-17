@@ -12,9 +12,9 @@ examples:
 ---
 
 <script lang="ts">
-import Callout from '$helpers/components/Callout.svelte';
-import Demo from '$helpers/components/Demo.svelte';
-import * as Api from '$helpers/components/api';
+import Callout from '@components/Callout.svelte';
+import Demo from '@components/Demo.svelte';
+import * as Api from '@components/api';
 </script>
 
 <Demo src="/examples/combobox/autocomplete" />

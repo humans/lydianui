@@ -1,7 +1,7 @@
 <script>
-	import DocsNavigation from '$helpers/layouts/DocsNavigation.svelte';
-	import DocsTableOfContents from '$helpers/layouts/DocsTableOfContents.svelte';
-	import TheHeader from '$helpers/layouts/TheHeader.svelte';
+	import DocsNavigation from '@layouts/DocsNavigation.svelte';
+	import DocsTableOfContents from '@layouts/DocsTableOfContents.svelte';
+	import TheHeader from '@layouts/TheHeader.svelte';
 
 	export let examples = [];
 </script>

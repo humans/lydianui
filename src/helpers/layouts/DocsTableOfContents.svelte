@@ -1,5 +1,5 @@
 <script>
-	import { toc } from '$helpers/layouts/table-of-contents';
+	import { toc } from '@layouts/table-of-contents';
 	import { onMount } from 'svelte';
 
 	export { className as class };

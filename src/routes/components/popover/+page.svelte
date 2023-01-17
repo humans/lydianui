@@ -1,5 +1,5 @@
 <script>
-	import Example from '$helpers/components/Example.svelte';
+	import Example from '@components/Example.svelte';
 </script>
 
 <svelte:head>
