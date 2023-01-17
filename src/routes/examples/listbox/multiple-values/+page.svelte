@@ -1,6 +1,6 @@
 <script>
 	import { Listbox } from '$lib';
-	import ChevronDown from '@icons/ChevronDown.svelte';
+	import ChevronDown from '@icons/outline/ChevronDown.svelte';
 	import Check from '@icons/Check.svelte';
 
 	const people = [

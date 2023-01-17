@@ -2,7 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import { Popover } from '$lib';
 	import Chat from '@icons/Chat.svelte';
-	import ChevronDown from '@icons/ChevronDown.svelte';
+	import ChevronDown from '@icons/outline/ChevronDown.svelte';
 
 	const Features = [
 		{
