@@ -11,11 +11,13 @@
 				<div class="the-header__logo">
 					<a href="/">
 						<Logo class="[ h-[1.375rem] ]" />
+						<span class="[ sr-only ]">lydian</span>
 					</a>
 				</div>
 
 				<span
-					class="[ bg-accent-base px-1.5 py-0.5 leading-4 text-[10px] tracking-tighter uppercase rounded-md font-bold ]"
+					class="[ bg-neutral-100 px-1.5 py-0.5 leading-4 text-[10px] tracking-tighter uppercase rounded-md font-bold ]"
+					aria-hidden="true"
 				>
 					alpha
 				</span>

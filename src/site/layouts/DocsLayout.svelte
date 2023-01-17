@@ -10,7 +10,10 @@
 	<TheHeader />
 
 	<div class="[ max-w-[90rem] mx-auto px-8 pt-[6rem] flex mt-6 ]">
-		<aside class="layout__sidebar [ hidden lg:block w-64 pr-8 shrink-0 text-sm ]">
+		<aside
+			class="layout__sidebar [ hidden lg:block w-64 pr-8 shrink-0 text-sm ]"
+			aria-label="Documentation Links"
+		>
 			<DocsNavigation class="[ sticky top-[6rem] ]" />
 		</aside>
 
@@ -20,7 +23,10 @@
 			</div>
 		</main>
 
-		<aside class="layout__table-of-contents [ text-sm hidden xl:block w-64 pl-8 shrink-0 ]">
+		<aside
+			class="layout__table-of-contents [ text-sm hidden xl:block w-64 pl-8 shrink-0 ]"
+			aria-label="Table of Contents"
+		>
 			<div class="[ sticky top-[6rem] space-y-8 ]">
 				<DocsTableOfContents />
 

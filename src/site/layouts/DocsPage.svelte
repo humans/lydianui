@@ -18,6 +18,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{post.title}</title>
+</svelte:head>
+
 <article class="page page--docs">
 	<header class="page__header [ mb-10 ]">
 		<h1 class="page__title [ tracking-tight text-3xl md:text-4xl font-bold ]">{post.title}</h1>
