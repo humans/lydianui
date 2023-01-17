@@ -10,7 +10,7 @@
 				Example here
 			</div>
 
-			<div class="[ text-sm leading-relaxed mt-2.5 pr-6 ]">
+			<div class="[ leading-relaxed mt-3 pr-6 ]">
 				<h3 class="[ font-medium ]">Component Name</h3>
 				<p class="[ text-muted mt-0.5 ]">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at

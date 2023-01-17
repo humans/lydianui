@@ -10,18 +10,15 @@
 	const features = [
 		{
 			title: 'Simple.',
-			caption:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at deserunt doloribus,'
+			caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus'
 		},
 		{
 			title: 'Accessible.',
-			caption:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at deserunt doloribus,'
+			caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at.'
 		},
 		{
 			title: 'Headless.',
-			caption:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium at deserunt doloribus,'
+			caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 		}
 	];
 </script>
@@ -83,13 +80,13 @@
 				<ContentContainer size="prose">
 					<h2 class="[ sr-only ]">Features</h2>
 
-					<section class="[ grid gap-12 lg:grid-cols-3 mt-8 ]">
+					<section class="[ grid gap-8 lg:grid-cols-3 mt-8 ]">
 						{#each features as feature}
 							<div>
 								<div class="[ h-14 w-14 bg-neutral-100 rounded-lg mb-2.5 ]" />
 								<div>
 									<h3 class="[ text-base tracking-tight font-bold ]">{feature.title}</h3>
-									<p class="[ text-sm text-muted mt-1 leading-relaxed ]">{feature.caption}</p>
+									<p class="[ text-muted mt-1 leading-relaxed ]">{feature.caption}</p>
 								</div>
 							</div>
 						{/each}
