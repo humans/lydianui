@@ -41,7 +41,7 @@
 						<div class="fleuron [ text-base text-muted mb-2 ]">A headless Svelte package</div>
 
 						<h1 class="[ text-4xl md:text-5xl font-bold tracking-tight ]">
-							Create web apps without compromise
+							Create web applications without compromise
 						</h1>
 
 						<p
