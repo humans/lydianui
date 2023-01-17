@@ -1,5 +1,5 @@
 ---
-title: Some Title
+title: Accordion
 subheading: Some subheading
 ---
 

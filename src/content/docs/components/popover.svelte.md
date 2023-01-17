@@ -1,5 +1,5 @@
 ---
-title: Some Title
+title: Popover
 subheading: Some subheading
 ---
 
