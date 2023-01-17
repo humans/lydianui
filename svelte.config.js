@@ -26,6 +26,7 @@ const config = {
 			 */
 			'@components': 'src/site/components',
 			'@layouts': 'src/site/layouts',
+			'@icons': 'src/site/icons',
 
 			/**
 			 * @ -> Package aliases
