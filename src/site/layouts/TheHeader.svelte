@@ -9,7 +9,7 @@
 		<div class="[ md:w-64 flex-items-center shrink-0 ]">
 			<div class="[ flex items-center space-x-3 ]">
 				<div class="the-header__logo">
-					<a href="/">
+					<a href="/" class="[ block ]">
 						<Logo class="[ h-[1.375rem] ]" />
 						<span class="[ sr-only ]">lydian</span>
 					</a>

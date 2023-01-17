@@ -4,7 +4,8 @@
 			'button--neutral [ border-transparent bg-neutral-100 hover:bg-neutral-200 contrast-more:bg-neutral-200 hover:contrast-more:bg-neutral-300 highlight-white/5 ]',
 		accent: 'button--primary [ bg-accent-dark border-transparent hover:bg-accent-dark ]',
 		clear: 'button--clear [ border-transparent bg-transparent ]',
-		outline: 'button--outline [ border border-neutral-100 bg-transparent hover:bg-neutral-100 ]',
+		outline:
+			'button--outline [ border border-neutral-100 bg-transparent hover:bg-neutral-100 focus:bg-neutral-100 ]',
 		disabled: 'button--disabled [ pointer-events-none opacity-50 ]'
 	};
 
@@ -37,6 +38,7 @@
         {disabled ? Look.disabled : ''}
         [ transition-colors duration-25 ]
         [ shadow-sm rounded-md border font-medium ]
+        [ focus:ring-offset-canvas focus:ring-offset-2 focus:ring-2 focus:outline-none ]
     "
 >
 	<slot />
