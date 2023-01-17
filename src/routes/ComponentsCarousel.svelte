@@ -27,13 +27,14 @@
 		scroll-snap-align: start;
 		scroll-snap-stop: always;
 
-		padding-left: calc(var(--container-padding) + ((100vw - 1024px) / 2));
+		padding-left: var(--container-padding);
 
 		@screen md {
 			--container-padding: 6vw;
 		}
 
 		@screen lg {
+			padding-left: calc(var(--container-padding) + ((100vw - 1024px) / 2));
 			--container-padding: 4vw;
 		}
 
