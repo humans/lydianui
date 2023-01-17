@@ -1,7 +1,7 @@
 <script>
 	import { Combobox } from '$lib';
-	import Stack from '@iconssolid/Stack.svelte';
-	import Search from '@iconsoutline/Search.svelte';
+	import Stack from '@icons/solid/Stack.svelte';
+	import Search from '@icons/outline/Search.svelte';
 
 	const RootCommands = [
 		{

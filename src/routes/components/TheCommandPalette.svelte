@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { Dialog, Combobox } from '$lib';
 	import { tick } from 'svelte';
-	import Search from '@iconsoutline/Search.svelte';
+	import Search from '@icons/outline/Search.svelte';
 
 	let input;
 	let state = {
