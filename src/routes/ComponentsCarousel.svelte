@@ -1,7 +1,10 @@
 <script>
 </script>
 
-<div class="carousel component-carousel [ overflow-x-scroll flex space-x-6 pb-12 pr-24 ]">
+<div
+	class="carousel component-carousel [ overflow-x-scroll flex space-x-6 pb-12 pt-12 pr-24 focus:outline-none focus:ring-2 ]"
+	tabindex="0"
+>
 	{#each Array(5) as _}
 		<div class="carousel__item component">
 			<div

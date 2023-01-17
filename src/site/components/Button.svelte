@@ -2,7 +2,7 @@
 	const Look = {
 		neutral:
 			'button--neutral [ border-transparent bg-neutral-100 hover:bg-neutral-200 contrast-more:bg-neutral-200 hover:contrast-more:bg-neutral-300 highlight-white/5 ]',
-		accent: 'button--primary [ bg-accent-base border-transparent hover:bg-accent-dark ]',
+		accent: 'button--primary [ bg-accent-dark border-transparent hover:bg-accent-dark ]',
 		clear: 'button--clear [ border-transparent bg-transparent ]',
 		outline: 'button--outline [ border border-neutral-100 bg-transparent hover:bg-neutral-100 ]',
 		disabled: 'button--disabled [ pointer-events-none opacity-50 ]'

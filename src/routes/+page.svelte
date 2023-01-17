@@ -74,6 +74,8 @@
 			</section>
 
 			<section class="landing-page__components [ mt-24 ]">
+				<h2 class="[ sr-only ]">Components</h2>
+
 				<ComponentsCarousel />
 			</section>
 
