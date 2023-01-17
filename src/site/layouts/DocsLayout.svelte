@@ -37,10 +37,7 @@
 						<ul class="[ leading-loose space-y-0.5 mt-2 ]">
 							{#each examples as example}
 								<li>
-									<a
-										class="[ transition-all text-neutral-500 hover:text-stroke ]"
-										href={example.link}
-									>
+									<a class="[ transition-all text-muted hover:text-stroke ]" href={example.link}>
 										{example.text}
 									</a>
 								</li>

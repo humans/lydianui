@@ -42,7 +42,7 @@
 						class="[ transition-all hover:text-stroke ]"
 						href={heading.link}
 						on:click|preventDefault={() => navigate(heading)}
-						class:text-neutral-500={!passed.includes(heading)}
+						class:text-muted={!passed.includes(heading)}
 						class:text-stroke={passed.includes(heading)}
 					>
 						{heading.text}
@@ -51,7 +51,7 @@
 			{/each}
 			<li>
 				<a
-					class="[ text-neutral-500 transition-all hover:text-stroke ]"
+					class="[ text-muted transition-all hover:text-stroke ]"
 					on:click|preventDefault={() => window.scroll({ top: 0, behavior: 'smooth' })}
 					href="#"
 				>
