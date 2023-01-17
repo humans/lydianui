@@ -57,7 +57,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <Dialog.Root bind:open={state.open}>
-	<div class="[ fixed inset-0 bg-slate-900/90 backdrop-blur ]" />
+	<div class="[ fixed inset-0 bg-canvas/90 backdrop-blur ]" />
 
 	<div class="[ inset-0 fixed flex justify-center ]">
 		<Dialog.Panel
