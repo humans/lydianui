@@ -6,6 +6,7 @@
 	import ArrowRight from '../site/icons/outline/ArrowRight.svelte';
 	import TheFooter from '@layouts/TheFooter.svelte';
 	import ComponentsCarousel from './ComponentsCarousel.svelte';
+	import Snippet from './Snippet.svelte';
 
 	const features = [
 		{
@@ -79,21 +80,35 @@
 				<ComponentsCarousel />
 			</section>
 
-			<section class="landing-page__features [ mt-48 ]">
+			<section class="landing-page__hook [ mt-36 ]">
 				<ContentContainer size="prose">
-					<h2 class="[ sr-only ]">Features</h2>
+					<div class="[ grid lg:grid-cols-5 gap-12 ]">
+						<div class="[ lg:col-span-2 ]">
+							<header>
+								<h2 class="[ text-3xl font-bold tracking-tight ]">Using Lydian</h2>
+								<p class="[ mt-2.5 text-muted ]">
+									The right section will change based on whichever feature is selected.. should it
+									auto navigate? Depends on how difficult that feature is to build.
+								</p>
+							</header>
 
-					<section class="[ grid gap-8 lg:grid-cols-3 mt-8 ]">
-						{#each features as feature}
-							<div>
-								<div class="[ h-14 w-14 bg-neutral-100 rounded-lg mb-2.5 ]" />
-								<div>
-									<h3 class="[ text-base tracking-tight font-bold ]">{feature.title}</h3>
-									<p class="[ text-muted mt-1 leading-relaxed ]">{feature.caption}</p>
-								</div>
-							</div>
-						{/each}
-					</section>
+							<section class="[ grid gap-8 mt-12 ]">
+								{#each features as feature}
+									<div class="[ text-sm ]">
+										<div class="[ h-14 w-14 bg-neutral-100 rounded-lg ]" />
+										<div class="[ mt-3 ]">
+											<h3 class="[ tracking-tight font-bold ]">{feature.title}</h3>
+											<p class="[ text-muted mt-1 leading-relaxed ]">{feature.caption}</p>
+										</div>
+									</div>
+								{/each}
+							</section>
+						</div>
+
+						<div class="[ lg:col-span-3 ]">
+							<Snippet />
+						</div>
+					</div>
 				</ContentContainer>
 			</section>
 		</article>

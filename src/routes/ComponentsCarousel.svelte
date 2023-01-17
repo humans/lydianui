@@ -24,21 +24,21 @@
 
 <style>
 	.component-carousel {
-		--container-padding: 8vw;
+		--carousel-padding: 8vw;
 
-		padding-left: var(--container-padding);
+		padding-left: var(--carousel-padding);
 
 		@screen md {
-			--container-padding: 6vw;
+			--carousel-padding: 6vw;
 		}
 
 		@screen lg {
-			padding-left: calc(var(--container-padding) + ((100vw - 1024px) / 2));
-			--container-padding: 4vw;
+			padding-left: calc(var(--carousel-padding) + ((100vw - 72rem) / 2));
+			--carousel-padding: 4vw;
 		}
 
 		@screen xl {
-			--container-padding: 2vw;
+			--carousel-padding: 2vw;
 		}
 	}
 </style>

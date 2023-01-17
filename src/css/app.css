@@ -6,6 +6,10 @@
 @import './utilities/prose.pcss';
 
 @layer base {
+	:root {
+		--container-padding: 8vw;
+	}
+
 	a:focus-visible,
 	a:focus {
 		outline: none;

@@ -1,7 +1,7 @@
 <script context="module">
 	const Size = {
 		max: 'content-container--max [ max-w-[90rem] ]',
-		prose: 'content-container--marketing [ max-w-5xl ]'
+		prose: 'content-container--marketing [ max-w-6xl ]'
 	};
 </script>
 
@@ -16,20 +16,22 @@
 	<slot />
 </div>
 
-<style>
+<style global>
 	.content-container {
-		padding: 0 8vw;
+		--container-padding: 8vw;
+
+		padding: 0 var(--container-padding);
 
 		@screen md {
-			padding: 0 6vw;
+			--container-padding: 6vw;
 		}
 
 		@screen lg {
-			padding: 0 4vw;
+			--container-padding: 4vw;
 		}
 
 		@screen xl {
-			padding: 0 2vw;
+			--container-padding: 2vw;
 		}
 	}
 </style>
