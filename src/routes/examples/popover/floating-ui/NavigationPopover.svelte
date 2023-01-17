@@ -2,7 +2,7 @@
 	import { computePosition, shift, offset, autoUpdate } from '@floating-ui/dom';
 	import { fly } from 'svelte/transition';
 	import { Popover } from '$lib';
-	import Chat from '$helpers/icons/Chat.svelte';
+	import Chat from '@icons/Chat.svelte';
 	import { onMount } from 'svelte';
 
 	const Features = [

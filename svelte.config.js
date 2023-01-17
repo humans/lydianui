@@ -24,15 +24,16 @@ const config = {
 			/**
 			 * @ -> Svelte Kit aliases
 			 */
+			'@': 'src/site',
 			'@components': 'src/site/components',
 			'@layouts': 'src/site/layouts',
 			'@icons': 'src/site/icons',
+			'@factories': 'src/site/factories',
 
 			/**
 			 * @ -> Package aliases
 			 */
-			$helpers: 'src/helpers',
-			$icons: 'src/helpers/icons'
+			$helpers: 'src/helpers'
 		}
 	}
 };

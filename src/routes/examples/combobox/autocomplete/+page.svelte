@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Combobox } from '$lib';
-	import { people } from '$helpers/factories';
+	import { people } from '@factories';
 
 	let selected: any = null;
 </script>

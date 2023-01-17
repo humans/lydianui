@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { fuzzy } from '$lib/helpers/collections';
-import { people } from '$helpers/factories';
+import { people } from '@factories';
 
 export const GET: RequestHandler = ({ url }) => {
 	let filteredPeople = [];

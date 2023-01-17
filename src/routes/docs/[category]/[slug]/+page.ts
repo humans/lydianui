@@ -1,4 +1,4 @@
-import { get } from '$helpers/content';
+import { get } from '@/content';
 
 export async function load({ params, url }) {
 	const { category, slug } = params;

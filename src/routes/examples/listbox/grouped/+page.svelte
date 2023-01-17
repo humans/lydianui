@@ -1,7 +1,7 @@
 <script>
 	import { Listbox } from '$lib';
-	import ChevronDown from '$helpers/icons/ChevronDown.svelte';
-	import Check from '$helpers/icons/Check.svelte';
+	import ChevronDown from '@icons/ChevronDown.svelte';
+	import Check from '@icons/Check.svelte';
 
 	const departments = [
 		{
