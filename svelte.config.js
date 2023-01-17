@@ -21,6 +21,15 @@ const config = {
 			pages: 'build'
 		}),
 		alias: {
+			/**
+			 * @ -> Svelte Kit aliases
+			 */
+			'@components': 'src/site/components',
+			'@layouts': 'src/site/layouts',
+
+			/**
+			 * @ -> Package aliases
+			 */
 			$helpers: 'src/helpers',
 			$icons: 'src/helpers/icons'
 		}

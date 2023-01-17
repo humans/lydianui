@@ -13,6 +13,7 @@ const colors = {
 	},
 	canvas: 'rgb(var(--color-canvas) / <alpha-value>)',
 	stroke: 'rgb(var(--color-stroke) / <alpha-value>)',
+	muted: 'rgb(var(--color-muted) / <alpha-value>)',
 	neutral: {
 		25: 'rgb(var(--color-neutral-25) / <alpha-value>)',
 		50: 'rgb(var(--color-neutral-50) / <alpha-value>)',
