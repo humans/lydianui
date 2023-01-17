@@ -96,5 +96,5 @@
 		</article>
 	</main>
 
-	<TheFooter class="[ mt-48 ]" />
+	<TheFooter class="[ mt-64 ]" />
 </div>
