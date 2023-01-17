@@ -33,7 +33,13 @@
 
 	<main>
 		<article class="landing-page [ antialiased ]">
-			<section class="landing-page__hero [ mt-[5rem] pt-48 ]">
+			<ContentContainer size="prose" class="[ mt-[6rem] ]">
+				<div class="[ bg-rose-600 rounded-lg py-3 px-6 font-medium text-sm ]">
+					The API is subject to breaking changes pre 1.0.
+				</div>
+			</ContentContainer>
+
+			<section class="landing-page__hero [ pt-48 ]">
 				<ContentContainer size="prose">
 					<div
 						class="[ max-w-xl flex flex-col items-center md:items-start text-center md:text-left optimize-legibility ]"

@@ -19,7 +19,7 @@
 					class="[ bg-neutral-100 px-1.5 py-0.5 leading-4 text-[10px] tracking-tighter uppercase rounded-md font-bold ]"
 					aria-hidden="true"
 				>
-					alpha
+					0.3.3
 				</span>
 			</div>
 		</div>
