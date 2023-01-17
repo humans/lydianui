@@ -26,7 +26,7 @@
 		<h1 class="page__title [ tracking-tight text-3xl md:text-4xl font-bold ]">{post.title}</h1>
 
 		{#if post.subheading}
-			<p class="[ text-base md:text-xl text-neutral-700 mt-1 ]">{post.subheading}</p>
+			<p class="[ text-base md:text-xl text-muted mt-1 ]">{post.subheading}</p>
 		{/if}
 	</header>
 
