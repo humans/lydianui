@@ -1,15 +1,29 @@
+<script>
+	import Logo from '@icons/Logo.svelte';
+</script>
+
 <header
-	class="the-header [ h-[4.5rem] flex fixed top-0 left-0 right-0 w-full bg-canvas/50 backdrop-blur z-10 ]"
+	class="the-header [ h-[5rem] flex fixed top-0 left-0 right-0 w-full bg-canvas/50 backdrop-blur z-10 ]"
 >
 	<div class="[ max-w-[90rem] w-full mx-auto px-8 flex items-center ]">
 		<div class="[ md:w-64 flex-items-center shrink-0 ]">
-			<div class="the-header__logo">
-				<strong>lydianui</strong>
+			<div class="[ flex items-center space-x-3 ]">
+				<div class="the-header__logo">
+					<a href="/">
+						<Logo class="[ h-[1.375rem] ]" />
+					</a>
+				</div>
+
+				<span
+					class="[ bg-accent-base px-1.5 py-0.5 leading-4 text-[10px] tracking-tighter uppercase rounded-md font-bold ]"
+				>
+					alpha
+				</span>
 			</div>
 		</div>
 
 		<div class="[ hidden sm:flex justify-end items-center w-full ]">
-			<ul class="[ flex space-x-6 text-sm ]">
+			<ul class="[ flex space-x-8 text-sm ]">
 				<li>
 					<a
 						href="/docs/overview/getting-started"

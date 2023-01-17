@@ -1,7 +1,7 @@
 <script>
-	import DocsNavigation from '$helpers/layouts/DocsNavigation.svelte';
-	import DocsTableOfContents from '$helpers/layouts/DocsTableOfContents.svelte';
-	import TheHeader from '$helpers/layouts/TheHeader.svelte';
+	import DocsNavigation from '@layouts/DocsNavigation.svelte';
+	import DocsTableOfContents from '@layouts/DocsTableOfContents.svelte';
+	import TheHeader from '@layouts/TheHeader.svelte';
 
 	export let examples = [];
 </script>
@@ -9,7 +9,7 @@
 <div class="layout layout--docs [ min-h-full ]">
 	<TheHeader />
 
-	<div class="[ max-w-[90rem] mx-auto px-8 pt-[6rem] flex ]">
+	<div class="[ max-w-[90rem] mx-auto px-8 pt-[6rem] flex mt-6 ]">
 		<aside class="layout__sidebar [ hidden lg:block w-64 pr-8 shrink-0 text-sm ]">
 			<DocsNavigation class="[ sticky top-[6rem] ]" />
 		</aside>

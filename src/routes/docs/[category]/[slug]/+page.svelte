@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../../../../css/app.css';
-	import DocPage from '$helpers/layouts/DocsPage.svelte';
+	import DocPage from '@layouts/DocsPage.svelte';
+	import DocsLayout from '@layouts/DocsLayout.svelte';
 	import { afterNavigate } from '$app/navigation';
-	import DocsLayout from '$helpers/layouts/DocsLayout.svelte';
 
 	export let data;
 

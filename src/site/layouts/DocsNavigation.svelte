@@ -18,10 +18,8 @@
 						<li>
 							<a
 								href={item.link}
-								class="[ duration-75 transition-colors text-neutral-700 hover:text-neutral-900 block ]"
-								class:hover:text-neutral-900={$page.url.pathname !== item.link}
-								class:text-accent-base={$page.url.pathname === item.link}
-								class:font-bold={$page.url.pathname === item.link}
+								class="[ duration-75 transition-colors text-muted hover:text-white block ]"
+								class:text-white={$page.url.pathname === item.link}
 							>
 								{item.text}
 							</a>
