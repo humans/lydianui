@@ -16,5 +16,15 @@ export default [
 			{ text: 'Listbox', link: '/docs/components/listbox' },
 			{ text: 'Popover', link: '/docs/components/popover' }
 		]
+	},
+
+	{
+		text: 'Utilities',
+		items: [
+			{ text: 'Cursor', link: '' },
+			{ text: 'Handles', link: '' },
+			{ text: 'Navigation', link: '' },
+			{ text: 'Store', link: '' }
+		]
 	}
 ];
