@@ -1,5 +1,6 @@
 <script>
 	import Logo from '@icons/Logo.svelte';
+	import Github from '@icons/solid/Github.svelte';
 </script>
 
 <header
@@ -34,7 +35,16 @@
 				</li>
 				<li><a href="" class="[ text-muted hover:text-white transition ]">API</a></li>
 				<li><a href="" class="[ text-muted hover:text-white transition ]">Plugins</a></li>
-				<li><a href="" class="[ text-muted hover:text-white transition ]">Case Studies</a></li>
+				<li><a href="" class="[ text-muted hover:text-white transition ]">Examples</a></li>
+				<li>
+					<a
+						href="https://github.com/humans/lydianui"
+						class="[ text-muted hover:text-white transition ]"
+					>
+						<Github class="[ h-4 w-4 ]" />
+						<span class="[ sr-only ]">Github</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
