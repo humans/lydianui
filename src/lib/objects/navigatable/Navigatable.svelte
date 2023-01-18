@@ -52,6 +52,8 @@
 	}
 
 	function handleKeydown(event) {
+		console.error('keydown');
+
 		if (KEY_PREVIOUS.includes(event.key)) {
 			return handlePrevious(event);
 		}
@@ -62,8 +64,6 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
-
-<svelte:element this={as} {...$$restProps}>
+<svelte:element this={as} {...$$restProps} on:keydown={handleKeydown}>
 	<slot />
 </svelte:element>

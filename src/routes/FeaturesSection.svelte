@@ -1,7 +1,9 @@
 <script>
+	import { NavigatableRoot, NavigatableItem } from '$lib';
 	import Snippet from './Snippet.svelte';
 	import Snippet2 from './Snippet2.svelte';
 	import Snippet3 from './Snippet3.svelte';
+	import { readable } from 'svelte/store';
 
 	const features = [
 		{
@@ -35,28 +37,40 @@
 			</p>
 		</header>
 
-		<section class="[ grid gap-4 mt-12 -mx-6 ]">
+		<NavigatableRoot
+			class="[ grid gap-4 mt-12 -mx-8 rounded-xl focus:outline-none focus-visible:bg-neutral-50 px-3 py-3 ]"
+			key="title"
+			items={readable(features)}
+			role="listbox"
+			tabindex="0"
+		>
 			{#each features as feature}
-				<button
-					type="button"
-					on:click={() => (selection = feature)}
-					class="
-						[ text-left px-6 py-5 rounded-lg bg-opacity-50 hover:bg-opacity-50 border transition ]
-						[ focus-visible:ring-2 focus:ring-accent-base ring-offset-2 ring-offset-canvas focus:outline-none ]
-						[ focus:bg-neutral-100 ]
-					"
-					class:bg-neutral-200={selection === feature}
-					class:border-transparent={selection !== feature}
-					class:hover:bg-neutral-100={selection !== feature}
-					class:border-neutral-200={selection === feature}
+				<NavigatableItem
+					role="option"
+					key={feature.title}
+					let:active
+					item={feature}
+					on:select={() => (selection = feature)}
+					class="[ focus:outline-none hover:cursor-pointer ]"
 				>
-					<span>
-						<strong class="[ tracking-tight font-bold ]">{feature.title}</strong>
-						<p class="[ text-sm text-muted mt-1 leading-relaxed ]">{feature.caption}</p>
-					</span>
-				</button>
+					<div
+						class="
+							[ text-left px-6 py-5 rounded-lg bg-opacity-50 hover:bg-opacity-50 transition ]
+							[ focus:bg-neutral-100 ]
+							[ {active ? 'highlight-white/5' : ''} ]
+						"
+						class:bg-neutral-200={selection === feature || active}
+						class:hover:bg-neutral-100={selection !== feature}
+						class:bg-neutral-300={selection === feature && active}
+					>
+						<span>
+							<strong class="[ tracking-tight font-bold ]">{feature.title}</strong>
+							<p class="[ text-sm text-muted mt-1 leading-relaxed ]">{feature.caption}</p>
+						</span>
+					</div>
+				</NavigatableItem>
 			{/each}
-		</section>
+		</NavigatableRoot>
 	</div>
 
 	<div class="[ lg:col-span-3 will-change-contents ]">
