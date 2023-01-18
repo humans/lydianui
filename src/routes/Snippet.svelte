@@ -12,7 +12,7 @@
 </script>
 
 <div
-	class="prose  [ transition hover:-translate-y-px hover:shadow-2xl hover:shadow-accent-base/20 rounded-xl ]"
+	class="prose  [ transition motion-safe:will-change-transform motion-safe:hover:-translate-y-px hover:shadow-2xl hover:shadow-accent-base/20 rounded-xl ]"
 >
 	<pre class="language-svelte" tabindex="-1"><code
 			class="language-svelte [ leading-[2] text-[13px] tracking-tight ]"

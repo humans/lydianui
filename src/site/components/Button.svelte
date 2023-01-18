@@ -2,7 +2,8 @@
 	const Look = {
 		neutral:
 			'button--neutral [ border-transparent bg-neutral-100 hover:bg-neutral-200 contrast-more:bg-neutral-200 hover:contrast-more:bg-neutral-300 highlight-white/5 ]',
-		accent: 'button--primary [ bg-accent-dark border-transparent hover:bg-accent-base ]',
+		accent:
+			'button--primary [ bg-accent-dark border-transparent hover:bg-accent-base hover:shadow-2xl hover:shadow-accent-base/50 ]',
 		clear: 'button--clear [ border-transparent bg-transparent ]',
 		outline:
 			'button--outline [ border border-neutral-100 bg-transparent hover:bg-neutral-100 focus:bg-neutral-100 ]',
@@ -36,7 +37,8 @@
         button
         {Size[size]} {Look[look]} {className}
         {disabled ? Look.disabled : ''}
-        [ transition-colors duration-25 ]
+        [ transition duration-50 ]
+        [ motion-safe:hover:-translate-y-px motion-safe:will-change-transform ]
         [ shadow-sm rounded-md border font-medium ]
         [ focus:ring-offset-canvas focus:ring-offset-2 focus:ring-2 focus:outline-none ]
     "
