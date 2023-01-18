@@ -25,7 +25,7 @@
 	let selection = features[0];
 </script>
 
-<div class="[ grid lg:grid-cols-5 gap-12 ]">
+<div class="[ grid lg:grid-cols-5 gap-16 ]">
 	<div class="[ lg:col-span-2 ]">
 		<header>
 			<h2 class="[ text-3xl font-bold tracking-tight ]">Using Lydian</h2>
@@ -55,7 +55,7 @@
 		</section>
 	</div>
 
-	<div class="[ lg:col-span-3 ]">
+	<div class="[ lg:col-span-3 will-change-contents ]">
 		<svelte:component this={selection.preview} />
 	</div>
 </div>
