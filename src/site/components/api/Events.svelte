@@ -14,7 +14,7 @@
 	</header>
 
 	<div class="[ overflow-x-auto w-screen -mx-8 px-8 md:mx-0 md:px-0 md:w-auto ]">
-		<table class="[ text-sm w-full min-w-[600px] md:max-w-full ]">
+		<table class="[ text-xs w-full min-w-[600px] md:max-w-full ]">
 			<thead class="[ text-neutral-600 ]">
 				<tr class="[ border-b ]">
 					<th class="[ w-1/2 text-left py-4 ]">Name</th>
