@@ -34,8 +34,9 @@
 	<main>
 		<article class="landing-page [ antialiased ]">
 			<ContentContainer size="prose" class="[ mt-[6rem] ]">
-				<div class="[ bg-rose-600 rounded-lg py-3 px-6 font-medium text-sm ]">
-					The API is subject to breaking changes pre 1.0.
+				<div class="[ bg-rose-600 rounded-lg py-3 px-5 font-medium text-sm ]">
+					The API is subject to <span class="[ underline font-bold ]">breaking changes</span> before
+					1.0.
 				</div>
 			</ContentContainer>
 
