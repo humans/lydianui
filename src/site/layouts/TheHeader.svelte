@@ -26,7 +26,7 @@
 		</div>
 
 		<div class="[ hidden sm:flex justify-end items-center w-full ]">
-			<ul class="[ flex space-x-8 text-sm ]">
+			<ul class="[ flex items-center space-x-8 text-sm ]">
 				<li>
 					<a
 						href="/docs/overview/getting-started"
