@@ -40,9 +40,10 @@
 				<button
 					type="button"
 					on:click={() => (selection = feature)}
-					class="[ text-left px-6 py-4 rounded-lg bg-opacity-50 border transition ]"
+					class="[ text-left px-6 py-5 rounded-lg bg-opacity-50 hover:bg-opacity-50 border transition ]"
 					class:bg-neutral-200={selection === feature}
 					class:border-transparent={selection !== feature}
+					class:hover:bg-neutral-100={selection !== feature}
 					class:border-neutral-200={selection === feature}
 				>
 					<span>
