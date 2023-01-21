@@ -11,25 +11,30 @@
 	let content;
 
 	const actions = [
-		{ component: DropdownItem, text: 'Edit', hotkey: 'e', handler: () => alert('edit') },
+		{ component: DropdownItem, text: 'Edit', hotkey: 'e', handler: () => console.error('edit') },
 		{
 			component: DropdownItem,
 			text: 'Share',
 			hotkey: 's',
 			disabled: true,
-			handler: () => alert('share')
+			handler: () => console.error('alert')
 		},
-		{ component: DropdownItem, text: 'Delete', hotkey: 'd', handler: () => alert('delete') },
+		{
+			component: DropdownItem,
+			text: 'Delete',
+			hotkey: 'd',
+			handler: () => console.error('delete')
+		},
 		{ component: DropdownSeparator },
 		{
 			component: DropdownItem,
 			text: 'Add to Apple Calendar',
-			handler: () => alert('add to apple calendar')
+			handler: () => console.error('add to apple calendar')
 		},
 		{
 			component: DropdownItem,
 			text: 'Add to Google Calendar',
-			handler: () => alert('add to google calendar')
+			handler: () => console.error('add to google calendar')
 		}
 	];
 

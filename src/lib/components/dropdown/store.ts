@@ -35,6 +35,8 @@ export const useDropdown = () =>
 
 			select(_, item) {
 				item.$element.dispatchEvent(new CustomEvent('select'));
+
+				this.close();
 			}
 		}
 	});

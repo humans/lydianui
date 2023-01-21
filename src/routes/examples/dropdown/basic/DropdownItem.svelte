@@ -8,7 +8,6 @@
 <DropdownItem
 	let:active
 	on:select={item.handler}
-	on:select={dropdown.close}
 	disabled={item.disabled}
 	class="[ hover:cursor-pointer my-1 ]"
 >
