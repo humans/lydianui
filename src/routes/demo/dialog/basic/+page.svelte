@@ -41,9 +41,11 @@
 					>
 				</header>
 
-				<div class="[ flex space-x-4 px-8 py-4 pt-6 ]">
+				<div
+					class="[ flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:space-x-4 px-8 py-4 pt-6 ]"
+				>
 					<div>
-						<div class="[ bg-[#c1e4e1] p-2 border-2 border-black mt-1.5 ]">
+						<div class="[ inline-flex bg-[#c1e4e1] p-2 border-2 border-black mt-1.5 ]">
 							<Trash class="[ h-8 w-8 text-black ]" />
 						</div>
 					</div>
@@ -53,7 +55,9 @@
 						</Dialog.Description>
 					</div>
 				</div>
-				<footer class="[ flex justify-end space-x-4 px-8 py-4 pb-6 ]">
+				<footer
+					class="[ flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:justify-end sm:space-x-4 px-8 py-4 pb-6 ]"
+				>
 					<button
 						class="[ border border-2 border-black px-4 py-1.5 text-sm hover:bg-black/10 ]"
 						on:click|preventDefault={() => (open = false)}
