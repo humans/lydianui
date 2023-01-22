@@ -30,16 +30,16 @@
 				<li>
 					<a
 						href="/docs/overview/getting-started"
-						class="[ text-muted hover:text-white transition ]">Docs</a
+						class="[ text-muted hover:text-stroke transition ]">Docs</a
 					>
 				</li>
-				<li><a href="" class="[ text-muted hover:text-white transition ]">API</a></li>
-				<li><a href="" class="[ text-muted hover:text-white transition ]">Plugins</a></li>
-				<li><a href="" class="[ text-muted hover:text-white transition ]">Examples</a></li>
+				<li><a href="" class="[ text-muted hover:text-stroke transition ]">API</a></li>
+				<li><a href="" class="[ text-muted hover:text-stroke transition ]">Plugins</a></li>
+				<li><a href="" class="[ text-muted hover:text-stroke transition ]">Examples</a></li>
 				<li>
 					<a
 						href="https://github.com/humans/lydianui"
-						class="[ text-muted hover:text-white transition ]"
+						class="[ text-muted hover:text-stroke transition ]"
 					>
 						<Github class="[ h-4 w-4 ]" />
 						<span class="[ sr-only ]">Github</span>

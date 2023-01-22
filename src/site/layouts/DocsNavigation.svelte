@@ -18,7 +18,7 @@
 						<li>
 							<a
 								href={item.link}
-								class="[ duration-75 transition-colors text-muted hover:text-white block ]"
+								class="[ font-medium duration-75 transition-colors text-muted hover:text-stroke block ]"
 								class:text-white={$page.url.pathname === item.link}
 								class:font-medium={$page.url.pathname === item.link}
 							>
