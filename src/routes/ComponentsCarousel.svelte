@@ -1,4 +1,5 @@
 <script>
+	const components = {};
 </script>
 
 <div

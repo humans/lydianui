@@ -1,10 +1,10 @@
 <script>
 	import '../css/app.css';
 	import TheHeader from '@layouts/TheHeader.svelte';
-	import ContentContainer from '@components/ContentContainer.svelte';
-	import Button from '@components/Button.svelte';
-	import ArrowRight from '../site/icons/outline/ArrowRight.svelte';
 	import TheFooter from '@layouts/TheFooter.svelte';
+	import ContentContainer from '@components/ContentContainer.svelte';
+	import ArrowRight from '@icons/outline/ArrowRight.svelte';
+	import Button from '@components/Button.svelte';
 	import ComponentsCarousel from './ComponentsCarousel.svelte';
 	import FeaturesSection from './FeaturesSection.svelte';
 </script>
@@ -19,7 +19,7 @@
 	<main>
 		<article class="landing-page [ antialiased ]">
 			<ContentContainer size="prose" class="[ mt-[6rem] ]">
-				<div class="[ bg-rose-700 rounded-lg py-3.5 px-5 font-medium text-sm ]">
+				<div class="[ bg-rose-700 rounded-lg py-3.5 px-5 font-medium text-sm text-white ]">
 					The API is subject to <span class="[ font-bold ]">breaking changes</span> before 1.0.
 				</div>
 			</ContentContainer>

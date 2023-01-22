@@ -40,6 +40,7 @@
 		<NavigatableRoot
 			class="[ grid gap-4 mt-12 -mx-8 rounded-xl focus:outline-none focus-visible:bg-neutral-50 px-3 py-3 ]"
 			key="title"
+			aria-label="Feature List"
 			items={readable(features)}
 			role="listbox"
 			tabindex="0"

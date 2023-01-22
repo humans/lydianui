@@ -2,7 +2,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const defaultColors = require('tailwindcss/colors');
 
 const colors = {
-	white: defaultColors.white,
+	white: 'rgb(var(--color-white) / <alpha-value>)',
+	black: 'rgb(var(--color-black) / <alpha-value>)',
 	green: defaultColors.emerald,
 	red: defaultColors.rose,
 	blue: defaultColors.sky,

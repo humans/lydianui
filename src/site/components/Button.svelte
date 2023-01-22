@@ -3,7 +3,7 @@
 		neutral:
 			'button--neutral [ border-transparent bg-neutral-100 hover:bg-neutral-200 contrast-more:bg-neutral-200 hover:contrast-more:bg-neutral-300 highlight-white/5 ]',
 		accent:
-			'button--primary [ bg-accent-dark border-transparent hover:bg-accent-base hover:shadow-2xl hover:shadow-accent-base/50 ]',
+			'button--primary [ bg-accent-dark text-white border-transparent hover:bg-accent-base hover:shadow-2xl hover:shadow-accent-base/50 ]',
 		clear: 'button--clear [ border-transparent bg-transparent ]',
 		outline:
 			'button--outline [ border border-neutral-100 bg-transparent hover:bg-neutral-100 focus:bg-neutral-100 ]',
