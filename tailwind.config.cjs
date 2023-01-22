@@ -52,7 +52,7 @@ module.exports = {
 			},
 			letterSpacing: {},
 			fontFamily: {
-				retro: ['industry', ...defaultTheme.fontFamily.sans],
+				retro: ['auger-mono', 'space-mono', 'industry', ...defaultTheme.fontFamily.sans],
 				sans: ['Inter var', 'Inter', ...defaultTheme.fontFamily.sans],
 				code: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
 			},
