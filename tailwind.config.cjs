@@ -52,8 +52,12 @@ module.exports = {
 			},
 			letterSpacing: {},
 			fontFamily: {
+				retro: ['industry', ...defaultTheme.fontFamily.sans],
 				sans: ['Inter var', 'Inter', ...defaultTheme.fontFamily.sans],
 				code: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
+			},
+			boxShadow: {
+				retro: '0.4rem 0.4rem 1px rgb(35 35 35)',
 			}
 		}
 	},

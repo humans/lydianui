@@ -9,7 +9,7 @@ import Demo from '@components/Demo.svelte';
 import * as Api from '@components/api';
 </script>
 
-<Demo src="/examples/dialog/basic" />
+<Demo src="/demo/dialog/basic" />
 
 <Callout title="About the dialog's default behavior">
 Some description about clicking the backdrop will have to be coded manually since native dialogs
